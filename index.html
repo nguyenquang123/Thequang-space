@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thequang.space - Personal Portfolio</title>
+    <meta name="description" content="Website cá nhân của Thequang - Nơi chia sẻ về bản thân và các dự án.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Thequang<span class="logo-dot">.space</span></a>
+            <nav class="nav-links">
+                <a href="#hero">Trang chủ</a>
+                <a href="#about">Về tôi</a>
+                <a href="#projects">Dự án</a>
+                <a href="#news">Tin tức</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <p class="eyebrow fade-in-up">Chào mừng đến với không gian của tôi</p>
+                <h1 class="fade-in-up delay-1">Xin chào, tôi là Quang</h1>
+                <p class="subtitle fade-in-up delay-2">Thiết kế sáng tạo & Phát triển phần mềm</p>
+                
+                <div class="clock-card fade-in-up delay-3">
+                    <p class="clock-label">Bây giờ là</p>
+                    <div id="live-clock" class="clock-time">--:--:--</div>
+                    <p id="live-date" class="clock-date">Đang tải ngày...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Về tôi</h2>
+                <div class="about-grid">
+                    <div class="about-text fade-in-up delay-1">
+                        <p>Tôi đam mê xây dựng những sản phẩm công nghệ có trải nghiệm người dùng tối ưu. Với sự tỉ mỉ trong từng chi tiết, tôi luôn cố gắng tạo ra những giải pháp tinh tế và mang lại giá trị thiết thực.</p>
+                        <ul class="skills-list">
+                            <li>Thiết kế Giao diện (UI/UX)</li>
+                            <li>Phát triển Web Frontend</li>
+                            <li>Lập trình Ứng dụng</li>
+                        </ul>
+                    </div>
+                    <div class="about-card fade-in-up delay-2">
+                        <div class="card-simple">
+                            <h3>Triết lý làm việc</h3>
+                            <p>"Đơn giản là đỉnh cao của sự tinh tế." Mọi chi tiết dù nhỏ nhất đều đóng góp vào một tổng thể hoàn hảo và thanh lịch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Dự án & Sản phẩm</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card fade-in-up delay-1">
+                        <div class="project-img">
+                            <img src="./assets/project-1.jpg" alt="Dự án 1" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Ứng dụng Quản lý Cá nhân</h3>
+                            <p>Một giải pháp tối giản giúp người dùng quản lý công việc và tài chính hàng ngày.</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card fade-in-up delay-2">
+                        <div class="project-img">
+                            <img src="./assets/project-2.jpg" alt="Dự án 2" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Website Thương mại điện tử</h3>
+                            <p>Giao diện hiện đại, tối ưu trải nghiệm mua sắm trên thiết bị di động.</p>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card fade-in-up delay-3">
+                        <div class="project-img">
+                            <img src="./assets/project-3.jpg" alt="Dự án 3" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3>Landing Page Sự kiện</h3>
+                            <p>Trang web quảng bá sự kiện với các hiệu ứng tương tác tinh tế.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section (Tabs) -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Tiêu điểm 24h</h2>
+                <div class="tabs-container fade-in-up delay-1">
+                    <div class="tabs-header-wrapper">
+                        <div class="tabs-header">
+                            <button class="tab-btn active" data-tab="tech-news">Công nghệ</button>
+                            <button class="tab-btn" data-tab="economy-news">Kinh tế</button>
+                            <button class="tab-btn" data-tab="stock-news">Cổ phiếu</button>
+                            <button class="tab-btn" data-tab="auto-news">Xe & Auto</button>
+                            <button class="tab-btn" data-tab="esports-news">Esports</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tabs-content">
+                        <!-- Tech News Tab -->
+                        <div id="tech-news" class="tab-pane active">
+                            <article class="news-item">
+                                <h3>Chính thức tắt sóng 2G tại Việt Nam</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Cột mốc quan trọng trong lộ trình hiện đại hóa hạ tầng viễn thông, tái quy hoạch tài nguyên tần số để tập trung phát triển công nghệ 4G và 5G trên toàn quốc.</p>
+                            </article>
+                            <article class="news-item">
+                                <h3>Tesla chính thức mở pháp nhân tại Việt Nam</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Hãng xe điện lớn nhất thế giới đánh dấu bước tiến mới bằng việc thành lập doanh nghiệp với số vốn điều lệ gần 77,7 tỷ đồng.</p>
+                            </article>
+                            <article class="news-item">
+                                <h3>Kêu gọi phanh hãm sự phát triển của siêu AI</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>CEO OpenAI, Anthropic cùng Elon Musk đồng loạt cảnh báo về nguy cơ mất kiểm soát và sự tập trung quyền lực quá mức vào các mô hình AI thế hệ mới.</p>
+                            </article>
+                        </div>
+                        
+                        <!-- Economy News Tab -->
+                        <div id="economy-news" class="tab-pane">
+                            <article class="news-item">
+                                <h3>Vinh danh doanh nghiệp nộp ngân sách lớn nhất (VNTAX)</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Top 200 doanh nghiệp đóng góp gần 1 triệu tỷ đồng, tương đương hơn 37% tổng thu ngân sách quốc gia, khẳng định vai trò trụ cột của khối doanh nghiệp.</p>
+                            </article>
+                            <article class="news-item">
+                                <h3>Duy trì đà tăng trưởng nhưng áp lực lạm phát hiện hữu</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Sản xuất công nghiệp và FDI tiếp tục tăng mạnh, song các cơ quan chức năng đặc biệt lưu ý CPI tiến sát mục tiêu 4,5% và tình trạng nhập siêu gia tăng.</p>
+                            </article>
+                        </div>
+
+                        <!-- Stock News Tab -->
+                        <div id="stock-news" class="tab-pane">
+                            <article class="news-item">
+                                <h3>VN-Index kiểm định lại mốc hỗ trợ quan trọng</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Chỉ số thị trường tiếp tục ghi nhận phiên giảm điểm về 1.788 điểm, tuy nhiên thanh khoản tăng mạnh 15% cho thấy lực cầu bắt đáy bắt đầu xuất hiện.</p>
+                            </article>
+                            <article class="news-item">
+                                <h3>Khối ngoại bất ngờ mua ròng kỷ lục</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Điểm sáng lớn khi khối ngoại đảo chiều mua ròng tới hơn 820 tỷ đồng trên HOSE, tập trung vào nhóm Năng lượng (GAS, BSR) và Bảo hiểm (BVH).</p>
+                            </article>
+                        </div>
+
+                        <!-- Auto News Tab -->
+                        <div id="auto-news" class="tab-pane">
+                            <article class="news-item">
+                                <h3>Kỷ lục mới: Concept xe điện đi 1.278km mỗi lần sạc</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Volkswagen giới thiệu mẫu "Mission Efficiency" tối ưu khí động học hình giọt nước, định hình lại ranh giới của các dòng xe điện thương mại tương lai.</p>
+                            </article>
+                            <article class="news-item">
+                                <h3>Lên ngôi xu hướng xe điện mở rộng phạm vi (REEV)</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Thị trường Việt Nam đang chuyển dịch sang dòng xe REEV, chạy hoàn toàn bằng điện nhưng sử dụng xăng để nạp pin, xóa tan nỗi lo về trạm sạc.</p>
+                            </article>
+                        </div>
+
+                        <!-- Esports News Tab -->
+                        <div id="esports-news" class="tab-pane">
+                            <article class="news-item">
+                                <h3>Chung Kết Thế Giới LMHT 2026 lộ diện các anh tài</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Gen.G, T1 và G2 Esports chính thức ghi danh. Giải đấu quan trọng nhất năm sẽ khởi tranh tại Mỹ từ giữa tháng 10 tới.</p>
+                            </article>
+                            <article class="news-item">
+                                <h3>VCT Champions 2026: Đếm ngược ngày khai mạc</h3>
+                                <span class="news-date">15 Tháng 9, 2026</span>
+                                <p>Cộng đồng Valorant toàn cầu đang hướng mắt về Thượng Hải khi sự kiện quốc tế lớn nhất chuẩn bị bắt đầu sau khi Stage 2 khu vực kết thúc.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Thequang.space. Chút bình yên giữa thế giới số.</p>
+            <div class="social-links">
+                <a href="#">Email</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>
