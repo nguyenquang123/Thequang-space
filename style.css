@@ -1567,3 +1567,62 @@ section {
         overflow-y: visible !important;
     }
 }
+
+/* === COMPREHENSIVE MOBILE FIXES === */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+    .section-title {
+        font-size: 2rem !important;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+    p, h1, h2, h3, h4, h5, h6, .features-list li, .warranty-status {
+        word-wrap: break-word;
+        white-space: normal !important;
+    }
+    .product-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .pricing-card {
+        padding: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .tabs-header-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    .tabs-header {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+    .tab-btn {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        padding: 10px 15px !important;
+        font-size: 0.9rem !important;
+    }
+    .modal-content {
+        width: 90% !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+    .modal-grid {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .tabs-content, .projects-grid, .about-section .container, .news-container {
+        max-height: none !important;
+        min-height: auto !important;
+        height: auto !important;
+        overflow-y: visible !important;
+    }
+}
