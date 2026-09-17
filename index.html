@@ -11,6 +11,141 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css?v=21">
+    
+    <!-- STRICT VERTICAL MOBILE LAYOUT (Bypass Cache) -->
+    <style id="strict-vertical-layout">
+        @media (max-width: 1024px) {
+            /* 1. MỘT TRANG GIẤY THẲNG - KHÔNG KÉO NGANG */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+            * {
+                box-sizing: border-box !important;
+                max-width: 100% !important;
+            }
+            
+            /* 2. HEADER TỰ ĐỘNG XỔ XUỐNG (WRAP) */
+            .navbar {
+                position: relative !important; /* Bỏ fixed để không đè chữ hero */
+                padding: 15px 20px !important;
+                height: auto !important;
+                background-color: var(--bg-color) !important;
+            }
+            .nav-content {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 15px !important;
+            }
+            .theme-toggle-btn {
+                position: absolute !important;
+                top: 15px !important;
+                right: 20px !important;
+            }
+            .nav-links {
+                display: flex !important;
+                flex-wrap: wrap !important; /* Các menu bị khuất tự xổ xuống dòng */
+                justify-content: center !important;
+                gap: 10px !important;
+                overflow-x: hidden !important;
+                white-space: normal !important;
+                width: 100% !important;
+            }
+            .nav-links a {
+                display: inline-block !important;
+                padding: 5px 10px !important;
+                font-size: 0.95rem !important;
+            }
+
+            /* 3. HERO CONTENT */
+            .hero-content {
+                padding-top: 40px !important; 
+            }
+
+            /* 4. TABS XỔ XUỐNG, KHÔNG KÉO NGANG */
+            .tabs-header-wrapper {
+                overflow: hidden !important;
+                border: none !important;
+            }
+            .tabs-header {
+                display: flex !important;
+                flex-wrap: wrap !important; /* Tab bị khuất sẽ rớt xuống */
+                justify-content: center !important;
+                gap: 10px !important;
+                width: 100% !important;
+                border-bottom: 1px solid var(--border-color) !important;
+                padding-bottom: 10px !important;
+            }
+            .tab-btn {
+                flex: 1 1 auto !important;
+                white-space: normal !important;
+                font-size: 0.9rem !important;
+                padding: 8px 12px !important;
+            }
+
+            /* 5. TẤT CẢ SẢN PHẨM / DỰ ÁN ÉP THÀNH 1 CỘT DỌC */
+            .product-grid, .projects-grid, .about-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important; /* Dọc 1 cột */
+                gap: 20px !important;
+                overflow: hidden !important;
+                width: 100% !important;
+                padding: 0 !important;
+            }
+            .pricing-card, .project-card, .about-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+            }
+            .pricing-card .product-image-container, .project-image {
+                height: auto !important; /* Để ảnh tự scale theo chiều dọc */
+                max-height: 250px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            /* 6. THÔNG TIN NEWS CĂN CHỈNH GỌN GÀNG */
+            .news-container {
+                overflow: hidden !important; /* Xóa scrollbar ngang/dọc */
+                height: auto !important;
+                max-height: none !important;
+                padding: 0 10px !important;
+            }
+            .news-item {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 25px !important;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 15px !important;
+            }
+            .news-item h3 {
+                font-size: 1.1rem !important;
+                line-height: 1.4 !important;
+                white-space: normal !important;
+                display: block !important;
+                margin-bottom: 8px !important;
+            }
+            .news-item p {
+                font-size: 0.95rem !important;
+                line-height: 1.5 !important;
+                white-space: normal !important;
+                overflow-wrap: break-word !important;
+            }
+            .news-date {
+                font-size: 0.8rem !important;
+                margin-bottom: 5px !important;
+                color: var(--text-muted) !important;
+            }
+            
+            /* XÓA MỌI THANH CUỘN CỤC BỘ */
+            .tabs-content, .products-section .tabs-content, .news-section .tabs-content {
+                max-height: none !important;
+                overflow: visible !important;
+                height: auto !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Custom Cursor -->
