@@ -457,7 +457,7 @@ p {
 /* =========================
    RESPONSIVE DESIGN
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-links {
         display: flex;
         overflow-x: auto;
@@ -763,7 +763,7 @@ p {
 }
 
 /* Desktop Scroll Snapping */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     html {
         scroll-snap-type: y mandatory;
     }
@@ -1044,7 +1044,7 @@ p {
 }
 
 /* Mobile Adjustments for Modal */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .modal-grid {
         grid-template-columns: 1fr;
     }
@@ -1510,7 +1510,7 @@ section {
 }
 
 /* Force 2-column layout for product grids on desktop */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -1552,7 +1552,7 @@ section {
 /* =========================================================================
    COMPREHENSIVE MOBILE DEEP OPTIMIZATION (IOS/ANDROID) - V2
    ========================================================================= */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* 1. Global Reset & Typography */
     body {
         font-size: 14px !important; /* Thu nhỏ chữ cơ bản */
