@@ -1549,3 +1549,21 @@ section {
     50% { opacity: 1; }
     100% { opacity: 0.5; }
 }
+
+/* === MOBILE FIXES === */
+@media (max-width: 768px) {
+    /* Prevent tabs from overlapping */
+    .tab-btn {
+        flex-shrink: 0 !important;
+    }
+    
+    /* Allow native page scrolling instead of tiny scroll boxes */
+    .products-section .tabs-content,
+    .news-section .tabs-content,
+    .projects-section .projects-grid,
+    .tabs-content,
+    .about-section .container {
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+}
