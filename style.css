@@ -1691,12 +1691,36 @@ section {
         border-radius: 10px !important;
     }
     .pricing-card, .project-card, .about-card {
-        flex: 0 0 88% !important; /* Thẻ con chiếm 88% chiều rộng để hé lộ thẻ tiếp theo */
-        max-width: 350px !important;
-        padding: 20px !important;
+        flex: 0 0 75% !important; /* Nhỏ lại để thấy rõ thẻ tiếp theo */
+        max-width: 280px !important; /* Cố định chiều rộng tối đa gọn gàng */
+        padding: 15px !important;
         box-sizing: border-box !important;
         margin: 0 !important;
         scroll-snap-align: center !important;
+    }
+
+    /* Thu nhỏ hình ảnh bị ghim cố định trong HTML */
+    .pricing-card .product-image-container, .project-image {
+        height: 150px !important; 
+        margin-bottom: 12px !important;
+    }
+    
+    /* Thu nhỏ phông chữ trong thẻ */
+    .pricing-card h3, .project-card h3, .about-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+    }
+    .pricing-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+    }
+    .pricing-card .modal-price {
+        font-size: 1.3rem !important;
+        margin: 8px 0 !important;
+    }
+    .pricing-card .btn, .project-card .btn {
+        padding: 10px 15px !important;
+        font-size: 0.85rem !important;
     }
 
     /* 6. Release Scrolling Constraints */
