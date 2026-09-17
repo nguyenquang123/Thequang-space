@@ -25,7 +25,15 @@
                 -webkit-overflow-scrolling: auto !important;
             }
             ::-webkit-scrollbar {
-                display: none !important; /* Ẩn toàn bộ thanh cuộn ngang nếu có */
+                display: none !important;
+            }
+            
+            /* CÂN ĐỐI KHOẢNG MÀU (SECTION SLIDES) 
+               Giảm padding khổng lồ của bản Desktop xuống mức vừa vặn cho điện thoại */
+            section {
+                padding: 40px 0 !important;
+                height: auto !important;
+                min-height: auto !important;
             }
             
             /* 2. HEADER: Xổ xuống, chữ không tràn hết dòng */
@@ -49,8 +57,8 @@
             }
             .nav-links {
                 display: flex !important;
-                flex-wrap: wrap !important; /* RỚT DÒNG */
-                justify-content: center !important; /* CHỮ KHÔNG TRÀN HẾT DÒNG */
+                flex-wrap: wrap !important;
+                justify-content: center !important;
                 gap: 8px !important;
                 width: 100% !important;
                 overflow-x: hidden !important;
@@ -58,26 +66,29 @@
             .nav-links a {
                 display: inline-block !important;
                 padding: 4px 8px !important;
-                font-size: 0.85rem !important; /* Thu nhỏ size chữ */
+                font-size: 0.85rem !important;
                 flex: 0 0 auto !important;
             }
 
-            /* 3. HERO CONTENT: Thu nhỏ cân đối */
+            /* 3. HERO CONTENT: Ép chữ nhỏ lại để vừa 1 dòng, không xuống dòng */
             .hero-content {
-                padding-top: 30px !important; 
+                padding-top: 20px !important; 
             }
             .hero-content h1 {
-                font-size: 1.6rem !important;
+                font-size: 1.5rem !important;
                 line-height: 1.3 !important;
             }
             .hero-content .subtitle {
-                font-size: 0.9rem !important;
+                font-size: 0.65rem !important; /* Rất nhỏ để vừa 1 dòng */
+                white-space: nowrap !important; /* ÉP KHÔNG XUỐNG DÒNG */
+                letter-spacing: 1px !important;
+                margin-bottom: 5px !important;
             }
             .clock-time {
                 font-size: 2rem !important;
             }
 
-            /* 4. TABS NỘI DUNG: Xổ xuống và TRÀN HẾT DÒNG (Stretched) để cân đối */
+            /* 4. TABS NỘI DUNG: Tràn đều */
             .tabs-header-wrapper {
                 overflow: hidden !important;
                 border: none !important;
@@ -85,26 +96,26 @@
             }
             .tabs-header {
                 display: flex !important;
-                flex-wrap: wrap !important; /* RỚT DÒNG */
-                justify-content: space-between !important; /* TRÀN ĐỀU */
-                gap: 5px !important; /* Khoảng cách nhỏ lại */
+                flex-wrap: wrap !important;
+                justify-content: space-between !important;
+                gap: 5px !important;
                 width: 100% !important;
                 border-bottom: 1px solid var(--border-color) !important;
                 padding-bottom: 10px !important;
                 overflow-x: hidden !important;
             }
             .tab-btn {
-                flex: 1 1 calc(33% - 10px) !important; /* ÉP TRÀN ĐỀU HẾT DÒNG, CÂN ĐỐI */
-                white-space: normal !important; /* Cho phép rớt dòng bên trong tab nếu chữ dài */
-                font-size: 0.8rem !important; /* Thu nhỏ size tab hết mức */
+                flex: 1 1 calc(33% - 10px) !important;
+                white-space: normal !important;
+                font-size: 0.8rem !important;
                 padding: 8px 4px !important;
                 text-align: center !important;
             }
 
-            /* 5. NỘI DUNG SẢN PHẨM / DỰ ÁN: Cột dọc, hình ảnh và text thu nhỏ */
+            /* 5. NỘI DUNG SẢN PHẨM / DỰ ÁN: Cột dọc */
             .product-grid, .projects-grid, .about-grid {
                 display: grid !important;
-                grid-template-columns: 1fr !important; /* 1 CỘT DỌC */
+                grid-template-columns: 1fr !important;
                 gap: 15px !important;
                 overflow: hidden !important;
                 width: 100% !important;
@@ -114,27 +125,39 @@
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 !important;
-                padding: 15px !important; /* Thu nhỏ khoảng không */
+                padding: 20px 15px !important; /* Cân đối trên dưới trái phải */
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important; /* Căn giữa mọi thứ trong card */
+                text-align: center !important;
             }
+            
+            /* Ép hình ảnh sản phẩm nhỏ lại đáng kể */
             .pricing-card .product-image-container, .project-image {
-                height: auto !important; 
-                max-height: 140px !important; /* THU NHỎ HÌNH ẢNH GẤP ĐÔI MỨC CŨ */
-                margin-bottom: 10px !important;
-                border-radius: 6px !important;
+                width: 50% !important; /* Thu hẹp chiều ngang của ảnh so với card */
+                height: 120px !important; /* Chiều cao cố định nhỏ gọn */
+                margin: 0 auto 15px auto !important; /* Căn giữa ảnh */
+                border-radius: 8px !important;
             }
+            
             .pricing-card h3, .project-card h3 {
-                font-size: 1.05rem !important; /* Thu nhỏ tên sản phẩm */
-                margin-bottom: 5px !important;
+                font-size: 1.05rem !important;
+                margin-bottom: 8px !important;
             }
             .pricing-card p, .project-card p {
-                font-size: 0.85rem !important; /* Thu nhỏ text mô tả */
+                font-size: 0.85rem !important;
                 line-height: 1.4 !important;
                 white-space: normal !important;
                 overflow-wrap: break-word !important;
+                text-align: center !important;
             }
             .modal-price {
-                font-size: 1.15rem !important; /* Thu nhỏ giá tiền */
-                margin: 5px 0 !important;
+                font-size: 1.15rem !important;
+                margin: 8px 0 !important;
+            }
+            .pricing-card .btn {
+                width: 100% !important; /* Nút kéo dài cho cân đối */
+                max-width: 200px !important;
             }
             
             /* 6. THÔNG TIN NEWS CĂN CHỈNH GỌN GÀNG VÀ THU NHỎ */
@@ -149,17 +172,17 @@
                 width: 100% !important;
                 margin-bottom: 20px !important;
                 border-bottom: 1px solid var(--border-color);
-                padding-bottom: 10px !important;
+                padding-bottom: 15px !important;
             }
             .news-item h3 {
-                font-size: 1rem !important; /* Thu nhỏ tít bài viết */
+                font-size: 1rem !important;
                 line-height: 1.3 !important;
                 white-space: normal !important;
                 display: block !important;
-                margin-bottom: 5px !important;
+                margin-bottom: 8px !important;
             }
             .news-item p {
-                font-size: 0.85rem !important; /* Thu nhỏ text bài viết */
+                font-size: 0.85rem !important;
                 line-height: 1.4 !important;
                 white-space: normal !important;
                 overflow-wrap: break-word !important;
