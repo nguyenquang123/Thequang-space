@@ -1671,18 +1671,32 @@ section {
         border-bottom: 3px solid var(--text-primary) !important;
     }
 
-    /* 5. Product & Project Grids (1 Column) */
+    /* 5. Product & Project Grids (Horizontal Swipe) */
     .product-grid, .projects-grid, .about-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        gap: 15px !important;
         width: 100% !important;
+        padding-bottom: 20px !important; /* Tạo khoảng trống cho thanh cuộn */
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .product-grid::-webkit-scrollbar, .projects-grid::-webkit-scrollbar, .about-grid::-webkit-scrollbar {
+        height: 4px !important;
+    }
+    .product-grid::-webkit-scrollbar-thumb, .projects-grid::-webkit-scrollbar-thumb, .about-grid::-webkit-scrollbar-thumb {
+        background: rgba(100, 100, 100, 0.3) !important;
+        border-radius: 10px !important;
     }
     .pricing-card, .project-card, .about-card {
+        flex: 0 0 88% !important; /* Thẻ con chiếm 88% chiều rộng để hé lộ thẻ tiếp theo */
+        max-width: 350px !important;
         padding: 20px !important;
-        width: 100% !important;
         box-sizing: border-box !important;
         margin: 0 !important;
+        scroll-snap-align: center !important;
     }
 
     /* 6. Release Scrolling Constraints */
