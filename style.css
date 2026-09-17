@@ -1548,81 +1548,136 @@ section {
     0% { opacity: 0.5; }
     50% { opacity: 1; }
     100% { opacity: 0.5; }
-}
 
-/* === MOBILE FIXES === */
+/* =========================================================================
+   COMPREHENSIVE MOBILE DEEP OPTIMIZATION (IOS/ANDROID)
+   ========================================================================= */
 @media (max-width: 768px) {
-    /* Prevent tabs from overlapping */
-    .tab-btn {
-        flex-shrink: 0 !important;
-    }
-    
-    /* Allow native page scrolling instead of tiny scroll boxes */
-    .products-section .tabs-content,
-    .news-section .tabs-content,
-    .projects-section .projects-grid,
-    .tabs-content,
-    .about-section .container {
-        max-height: none !important;
-        overflow-y: visible !important;
-    }
-}
-
-/* === COMPREHENSIVE MOBILE FIXES === */
-@media (max-width: 768px) {
+    /* 1. Global Reset & Typography */
     body {
-        font-size: 14px;
-        overflow-x: hidden;
+        font-size: 14px !important;
+        overflow-x: hidden !important;
     }
     .section-title {
-        font-size: 2rem !important;
-    }
-    .hero-content h1 {
-        font-size: 2.5rem !important;
-        line-height: 1.2 !important;
+        font-size: 1.8rem !important;
+        margin-bottom: 30px !important;
     }
     p, h1, h2, h3, h4, h5, h6, .features-list li, .warranty-status {
-        word-wrap: break-word;
-        white-space: normal !important;
+        word-wrap: break-word !important;
+        white-space: normal !important; /* Force text to wrap */
     }
-    .product-grid {
-        display: flex !important;
+
+    /* 2. Header & Navigation */
+    .nav-content {
         flex-direction: column !important;
-        gap: 20px !important;
+        gap: 12px !important;
+        padding: 10px 0 !important;
     }
-    .pricing-card {
-        padding: 20px !important;
+    .nav-links {
         width: 100% !important;
-        box-sizing: border-box !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        padding-bottom: 5px !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
     }
+    .nav-links::-webkit-scrollbar {
+        display: none !important;
+    }
+    .nav-links a {
+        font-size: 0.9rem !important;
+    }
+
+    /* 3. Hero Section & Clock */
+    .hero-content {
+        padding-top: 80px !important;
+    }
+    .hero-content h1 {
+        font-size: 2rem !important;
+        line-height: 1.3 !important;
+    }
+    .hero-content .subtitle {
+        font-size: 1rem !important;
+    }
+    .clock-card {
+        padding: 15px 20px !important; /* Smaller padding to fit mobile */
+        width: 90% !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+    }
+    .clock-time {
+        font-size: 2.5rem !important;
+    }
+
+    /* 4. Tabs Navigation (No Overlapping) */
     .tabs-header-wrapper {
         overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch !important;
     }
     .tabs-header {
         display: flex !important;
         flex-wrap: nowrap !important;
+        min-width: min-content !important; /* Ensures the flex container doesn't squish children */
     }
     .tab-btn {
-        flex: 0 0 auto !important;
+        flex: 0 0 auto !important; /* Never shrink, forces horizontal scroll */
         white-space: nowrap !important;
         padding: 10px 15px !important;
         font-size: 0.9rem !important;
     }
+
+    /* 5. Product & Project Grids (Single Column) */
+    .product-grid, .projects-grid, .about-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Strictly 1 column */
+        gap: 20px !important;
+    }
+    .pricing-card, .project-card, .about-card {
+        padding: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 6. Release Scrolling Constraints (Allow Native Scroll) */
+    .tabs-content, .products-section .tabs-content, .news-section .tabs-content, .projects-section .projects-grid, .about-section .container, .news-container {
+        max-height: none !important; /* Remove height locks */
+        min-height: auto !important;
+        height: auto !important;
+        overflow-y: visible !important;
+    }
+
+    /* 7. Modals */
     .modal-content {
-        width: 90% !important;
+        width: 95% !important; /* Nearly full width */
+        max-width: none !important;
         margin: 20px auto !important;
         padding: 20px !important;
         box-sizing: border-box !important;
+        border-radius: 10px !important;
     }
     .modal-grid {
         display: flex !important;
         flex-direction: column !important;
+        gap: 20px !important;
     }
-    .tabs-content, .projects-grid, .about-section .container, .news-container {
-        max-height: none !important;
-        min-height: auto !important;
-        height: auto !important;
-        overflow-y: visible !important;
+    .modal-info, .modal-qr {
+        padding: 10px !important;
+        border: none !important; /* Remove center dividers on mobile */
+    }
+    #modal-free-download .modal-content {
+        padding: 20px 15px !important;
+    }
+    #modal-free-download h3 {
+        font-size: 1.3rem !important;
+    }
+    #modal-free-download p {
+        font-size: 0.95rem !important;
+    }
+    #modal-free-download a, #modal-free-download button {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+        flex: 1 !important; /* Make buttons share space equally */
+        text-align: center !important;
     }
 }
