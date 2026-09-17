@@ -1555,11 +1555,11 @@ section {
 @media (max-width: 768px) {
     /* 1. Global Reset & Typography */
     body {
-        font-size: 15px !important;
-        line-height: 1.6 !important;
+        font-size: 14px !important; /* Thu nhỏ chữ cơ bản */
+        line-height: 1.5 !important;
     }
     .section-title {
-        font-size: 1.8rem !important;
+        font-size: 1.6rem !important; /* Thu nhỏ tiêu đề */
         margin-bottom: 25px !important;
         line-height: 1.3 !important;
     }
@@ -1568,19 +1568,38 @@ section {
         white-space: normal !important;
     }
 
-    /* 2. Header & Navigation */
+    /* 2. Header & Navigation (Từng level chức năng) */
+    .navbar {
+        background-color: rgba(250, 249, 246, 0.98) !important; /* Nền luôn đặc trên mobile để chống đè chữ */
+        padding: 15px 0 10px 0 !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+    [data-theme='dark'] .navbar {
+        background-color: rgba(15, 17, 21, 0.98) !important;
+    }
     .nav-content {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        justify-content: space-between !important;
+        display: flex !important;
+        flex-direction: column !important; /* Ép xuống dòng */
         align-items: center !important;
-        padding: 12px 0 !important;
+        gap: 15px !important; /* Khoảng cách giữa logo và menu */
+        position: relative !important;
+    }
+    .nav-content .logo {
+        font-size: 1.4rem !important; /* Thu nhỏ logo */
+        margin: 0 !important;
+    }
+    .theme-toggle-btn {
+        position: absolute !important; /* Đặt nút mặt trăng góc phải trên cùng */
+        top: 0 !important;
+        right: 0 !important;
+        margin: 0 !important;
     }
     .nav-links {
-        order: 3 !important;
+        display: flex !important;
         width: 100% !important;
-        margin-top: 15px !important;
-        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        gap: 20px !important;
+        overflow-x: auto !important; /* Menu vuốt ngang */
         white-space: nowrap !important;
         padding-bottom: 5px !important;
         scrollbar-width: none !important;
@@ -1590,30 +1609,33 @@ section {
         display: none !important;
     }
     .nav-links a {
-        font-size: 0.95rem !important;
+        font-size: 0.9rem !important; /* Thu nhỏ chữ menu */
     }
 
     /* 3. Hero Section & Clock */
     .hero-content {
-        padding-top: 140px !important;
+        padding-top: 150px !important; /* Đẩy nội dung xuống xa navbar */
     }
     .hero-content h1 {
-        font-size: 2.2rem !important;
+        font-size: 1.8rem !important; /* Thu nhỏ chữ H1 */
         line-height: 1.3 !important;
     }
+    .hero-content .eyebrow {
+        font-size: 0.85rem !important; /* Thu nhỏ chữ Chào mừng */
+        letter-spacing: 2px !important;
+    }
     .hero-content .subtitle {
-        font-size: 1.05rem !important;
-        line-height: 1.5 !important;
+        font-size: 0.95rem !important;
     }
     .clock-card {
-        padding: 15px 20px !important;
+        padding: 15px !important;
         width: 100% !important;
         max-width: 320px !important;
         box-sizing: border-box !important;
-        margin: 0 auto !important;
+        margin: 20px auto 0 auto !important;
     }
     .clock-time {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem !important; /* Thu nhỏ đồng hồ */
     }
 
     /* 4. Tabs Navigation (Horizontal Slide) */
@@ -1628,16 +1650,16 @@ section {
         display: inline-flex !important;
         flex-direction: row !important;
         gap: 15px !important;
-        width: max-content !important; /* Forces container to expand based on content */
+        width: max-content !important;
         min-width: 100% !important;
     }
     .tab-btn {
-        flex: 0 0 auto !important; /* Never shrink, forces horizontal scroll */
+        flex: 0 0 auto !important;
         width: auto !important;
         white-space: nowrap !important;
         text-align: center !important;
         padding: 10px 18px !important;
-        font-size: 1rem !important;
+        font-size: 0.95rem !important;
         border: none !important;
         border-bottom: 3px solid transparent !important;
         border-radius: 0 !important;
@@ -1653,11 +1675,11 @@ section {
     .product-grid, .projects-grid, .about-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
-        gap: 25px !important;
+        gap: 20px !important;
         width: 100% !important;
     }
     .pricing-card, .project-card, .about-card {
-        padding: 22px !important;
+        padding: 20px !important;
         width: 100% !important;
         box-sizing: border-box !important;
         margin: 0 !important;
@@ -1669,7 +1691,7 @@ section {
         min-height: auto !important;
         height: auto !important;
         overflow-y: visible !important;
-        overflow-x: hidden !important; /* Prevent horizontal scroll on body content */
+        overflow-x: hidden !important;
     }
 
     /* 7. Modals */
@@ -1677,7 +1699,7 @@ section {
         width: 92% !important;
         max-width: none !important;
         margin: 20px auto !important;
-        padding: 25px 20px !important;
+        padding: 20px !important;
         box-sizing: border-box !important;
         border-radius: 12px !important;
     }
