@@ -10,10 +10,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css?v=23">
+    <link rel="stylesheet" href="./style.css?v=24">
     
     <!-- STRICT VERTICAL MOBILE LAYOUT (Bypass Cache) -->
     <style id="strict-vertical-layout">
+        /* SỬA LỖI BỊ CHE KHUẤT (CẮT ĐUÔI) NỘI DUNG TRÊN CẢ PC VÀ MOBILE */
+        .projects-grid, .tabs-content, .products-section .tabs-content, .news-section .tabs-content, section, .news-container {
+            max-height: none !important;
+            height: auto !important;
+            overflow: visible !important;
+        }
+
         @media (max-width: 1024px) {
             /* 1. TUYỆT ĐỐI KHÔNG KÉO NGANG BẤT CỨ ĐÂU */
             html, body {
@@ -133,7 +140,7 @@
             }
             
             /* Ép hình ảnh sản phẩm nhỏ lại đáng kể */
-            .pricing-card .product-image-container, .project-image {
+            .pricing-card .product-image-container, .project-card .project-img {
                 width: 50% !important; /* Thu hẹp chiều ngang của ảnh so với card */
                 height: 120px !important; /* Chiều cao cố định nhỏ gọn */
                 margin: 0 auto 15px auto !important; /* Căn giữa ảnh */
