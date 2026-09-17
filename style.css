@@ -160,12 +160,12 @@ p {
 /* =========================
    HERO SECTION
    ========================= */
-.hero-section {
-    min-height: 85vh;
+\.hero-section {
+    background-color: var(--bg-color);
     display: flex;
     align-items: center;
-    padding-top: 80px;
     text-align: center;
+    padding-top: 80px !important;
 }
 
 .hero-content {
@@ -266,7 +266,8 @@ p {
    PROJECTS SECTION
    ========================= */
 .projects-section {
-    padding: var(--section-spacing) 0;
+    padding: var(--section-padding) 0;
+    background-color: var(--bg-color);
 }
 
 .projects-grid {
@@ -323,7 +324,7 @@ p {
    NEWS SECTION (TABS)
    ========================= */
 .news-section {
-    padding: var(--section-spacing) 0;
+    padding: var(--section-padding) 0;
     background-color: var(--bg-secondary);
 }
 
@@ -338,15 +339,13 @@ p {
 .tabs-header-wrapper {
     width: 100%;
     overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: thin; /* Firefox */
+    
     margin-bottom: 32px;
     border-bottom: 1px solid var(--border-color);
 }
 
-.tabs-header-wrapper::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-}
+
 
 .tabs-header {
     display: inline-flex;
@@ -354,6 +353,8 @@ p {
 }
 
 .tab-btn {
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
     background: none;
     border: none;
     padding: 12px 24px;
@@ -370,19 +371,9 @@ p {
     color: var(--text-primary);
 }
 
-.tab-btn.active {
-    color: var(--text-primary);
-}
 
-.tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--text-primary);
-}
+
+
 
 .tab-pane {
     display: none;
@@ -468,9 +459,18 @@ p {
    ========================= */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
     }
     
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
     }
@@ -478,4 +478,1074 @@ p {
     .tabs-container {
         padding: 24px 16px;
     }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-item h3 {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+/* =========================
+   DARK THEME OVERRIDES
+   ========================= */
+[data-theme='dark'] {
+    --bg-color: #0f1115;
+    --bg-secondary: #1a1d24;
+    --text-primary: #f8f9fa;
+    --text-secondary: #a0aec0;
+    --border-color: #2a2e35;
+}
+
+[data-theme='dark'] h1, 
+[data-theme='dark'] h2, 
+[data-theme='dark'] h3 {
+    color: #ffffff;
+}
+
+[data-theme='dark'] .clock-card {
+    background-color: var(--bg-secondary);
+}
+
+[data-theme='dark'] .card-simple {
+    background-color: var(--bg-secondary);
+}
+
+[data-theme='dark'] .tabs-container {
+    background-color: var(--bg-secondary);
+}
+
+[data-theme='dark'] .navbar.scrolled {
+    background-color: rgba(15, 17, 21, 0.95);
+}
+
+/* =========================
+   UI/UX UPGRADES
+   ========================= */
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast);
+    padding: 4px;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--accent-color);
+}
+
+.theme-toggle-btn .sun-icon {
+    display: none;
+}
+
+[data-theme='dark'] .theme-toggle-btn .moon-icon {
+    display: none;
+}
+
+[data-theme='dark'] .theme-toggle-btn .sun-icon {
+    display: block;
+}
+
+/* Custom Cursor */
+@media (pointer: fine) {
+    body, a, button {
+        cursor: none;
+    }
+    
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--accent-color);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+        mix-blend-mode: difference;
+    }
+
+    .custom-cursor.hovering {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(123, 138, 120, 0.1);
+    }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    width: 0%;
+    z-index: 10000;
+    transition: width 0.1s;
+}
+
+/* Parallax Clock */
+#parallax-clock {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    z-index: 99999;
+    transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.toast.show {
+    bottom: 40px;
+}
+
+/* =========================
+   PRODUCTS SECTION
+   ========================= */
+.products-section {
+    padding: var(--section-padding) 0;
+    background-color: var(--bg-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Old grid */
+.old-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-category {
+    background-color: var(--bg-secondary);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.product-category h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+.product-card:last-child {
+    margin-bottom: 0;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: var(--text-secondary);
+}
+
+[data-theme="dark"] .product-card:hover {
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.product-card h4 {
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.product-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.status-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    background-color: rgba(123, 138, 120, 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    border: 1px solid rgba(123, 138, 120, 0.3);
+}
+
+
+
+/* =========================
+   REFINEMENTS & CONTACT
+   ========================= */
+.news-item h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    gap: 10px;
+}
+
+.news-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.source-icon {
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+    display: flex;
+    align-items: center;
+}
+
+.source-icon:hover {
+    color: var(--accent-color);
+}
+
+.contact-info {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.contact-info p {
+    margin: 4px 0;
+}
+
+/* Desktop Scroll Snapping */
+@media (min-width: 769px) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
+    
+    section {
+        min-height: 100vh;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15vh !important; /* 15% from top */
+        padding-bottom: 5vh !important;
+        overflow: hidden;
+    }
+    
+    section::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .hero-section {
+        justify-content: center;
+        padding-top: 80px !important;
+    }
+}
+
+/* =========================
+   PRICING CARDS
+   ========================= */
+.pricing-card {
+    height: 100%;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .pricing-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.pricing-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.price-section {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.old-price {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+.new-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.features-list li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.features-list li::before {
+    content: '✓';
+    color: #2ed573;
+    font-weight: bold;
+}
+
+.warranty-status {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.buy-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+}
+
+.buy-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* =========================
+   CHECKOUT MODALS
+   ========================= */
+.checkout-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+}
+
+.checkout-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--bg-color);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 0;
+}
+
+.modal-info {
+    padding: 40px;
+    background-color: var(--bg-color);
+}
+
+.modal-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.modal-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.modal-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-features li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 20px;
+}
+
+.modal-features li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.modal-features li strong {
+    color: var(--text-primary);
+}
+
+.modal-qr {
+    background-color: #f8f9fa; /* Always light background for QR to be scanned easily */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-left: 1px solid var(--border-color);
+}
+
+.modal-qr img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    background: transparent;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.modal-qr p {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Mobile Adjustments for Modal */
+@media (max-width: 768px) {
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-info {
+        padding: 30px;
+    }
+    
+    .modal-qr {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding: 30px;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+
+/* Fix jumping tabs */
+.tabs-content {
+    min-height: 400px; /* Prevent jumping */
+    max-height: 72vh; /* Don't exceed 60% of viewport */
+    overflow-y: auto; /* Scroll internally if content is too large */
+    padding-bottom: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.tabs-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Shrink pricing card */
+.pricing-card {
+    height: 100%;
+    padding: 15px !important;
+    gap: 8px !important;
+}
+.pricing-card h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0;
+}
+.price-section .new-price {
+    font-size: 1.5rem !important;
+}
+.price-section .old-price {
+    font-size: 0.8rem !important;
+}
+.features-list {
+    gap: 4px !important;
+}
+.features-list li {
+    font-size: 0.8rem !important;
+}
+.warranty-status {
+    font-size: 0.75rem !important;
+    margin-top: 5px !important;
+}
+.buy-btn {
+    padding: 8px !important; margin-top: auto !important;
+    font-size: 0.9rem !important;
+}
+
+/* Shrink pricing card */
+.pricing-card {
+    height: 100%;
+    padding: 15px !important;
+    gap: 8px !important;
+}
+.pricing-card h4 {
+    font-size: 1rem !important;
+    margin-bottom: 0;
+}
+.price-section .new-price {
+    font-size: 1.5rem !important;
+}
+.price-section .old-price {
+    font-size: 0.8rem !important;
+}
+.features-list {
+    gap: 4px !important;
+}
+.features-list li {
+    font-size: 0.8rem !important;
+}
+.warranty-status {
+    font-size: 0.75rem !important;
+    margin-top: 5px !important;
+}
+.buy-btn {
+    padding: 8px !important; margin-top: auto !important;
+    font-size: 0.9rem !important;
+}
+
+/* Fix ribbon cutoff */
+
+
+/* Flex fixes to prevent section overflow */
+#products .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#products .tabs-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+#products .tabs-content {
+    flex: 1;
+    min-height: 0;
+    max-height: none; /* override previous max-height */
+    overflow-y: auto;
+}
+
+#news .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#news .tabs-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+#news .tabs-content {
+    flex: 1;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+}
+
+/* === TARGETED FIXES: Ribbon, Button alignment, Tab slide colors === */
+
+/* Fix ribbon so text is never cut off */
+
+
+/* Buy button always pinned to bottom of card */
+.buy-btn {
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* Tab header highlight */
+.tabs-header-wrapper {
+    background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-color)) !important;
+}
+
+
+
+
+
+/* Slide colours per tab - subtle background tint */
+#product-soft  { background: #f7f5f0; }
+#product-premium    { background: #f4f7f4; }
+#product-media { background: #f4f4f7; }
+#product-tech  { background: #f7f4f4; }
+#product-smarthome { background: #f4f7f7; }
+#product-cosmetics { background: #f7f4f7; }
+
+/* Section title: keep original, just add left accent bar */
+/* .products-section .section-title::before removed */
+
+/* Ensure the tabs-content scrolls internally and tabs-container stays in viewport */
+.products-section .tabs-content {
+    max-height: 65vh !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.products-section .tabs-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.products-section .tabs-content::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+/* Shrink card internals to fit 65vh without scrolling for typical content */
+.products-section .pricing-card {
+    padding: 16px !important;
+    gap: 8px !important;
+}
+
+.products-section .pricing-card h4 {
+    font-size: 0.95rem !important;
+    padding-right: 44px;
+}
+
+.products-section .new-price {
+    font-size: 1.35rem !important;
+}
+
+.products-section .old-price {
+    font-size: 0.75rem !important;
+}
+
+.products-section .features-list li {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+}
+
+.products-section .warranty-status {
+    font-size: 0.72rem !important;
+    padding-top: 6px !important;
+}
+
+.products-section .buy-btn {
+    padding: 9px !important;
+    font-size: 0.85rem !important;
+}
+
+.products-section .price-section {
+    margin-bottom: 4px !important;
+}
+
+
+/* === FIX: Ribbon fully visible - no text cut off === */
+
+
+/* === FIX: Buy button always at bottom of card === */
+.pricing-card {
+    display: flex !important;
+    flex-direction: column !important;
+}
+.buy-btn {
+    margin-top: auto !important;
+}
+
+/* === FIX: Scrollable sections when content overflows === */
+.products-section .tabs-content,
+.news-section .tabs-content {
+    max-height: 62vh !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+.products-section .tabs-content::-webkit-scrollbar,
+.news-section .tabs-content::-webkit-scrollbar {
+    width: 4px;
+}
+.products-section .tabs-content::-webkit-scrollbar-thumb,
+.news-section .tabs-content::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+/* Projects section also scrollable */
+.projects-section .projects-grid {
+    max-height: 62vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+.projects-section .projects-grid::-webkit-scrollbar { width: 4px; }
+.projects-section .projects-grid::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+/* === VISUAL: Tab header subtle highlight === */
+.tabs-header-wrapper {
+    background: var(--bg-secondary) !important;
+}
+
+
+
+/* === VISUAL: Slide colours per tab pane === */
+#product-soft  { background: rgba(247,245,240, 0.8); border-radius: 8px; }
+#product-premium    { background: rgba(244,247,244, 0.8); border-radius: 8px; }
+#product-media { background: rgba(244,244,247, 0.8); border-radius: 8px; }
+#product-tech  { background: rgba(247,244,244, 0.8); border-radius: 8px; }
+#product-smarthome { background: rgba(244,247,247, 0.8); border-radius: 8px; }
+#product-cosmetics { background: rgba(247,244,247, 0.8); border-radius: 8px; }
+
+/* === DEFINITIVE Ribbon Badge Fix ===
+   overflow: visible on .pricing-card lets the ribbon show fully.
+   This is the ONE source of truth for this rule. */
+.pricing-badge {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: #e8453c;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 5px 36px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    white-space: nowrap;
+    z-index: 1;
+    letter-spacing: 0.2px;
+}
+
+
+/* ============================================================
+   SMART SCROLLBARS - Appear only when needed, elegant style
+   Layout never changes, sections stay full-screen
+   ============================================================ */
+
+/* --- Global thin scrollbar style (Chromium) --- */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+    border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.3); }
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* --- Firefox --- */
+* { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+
+/* --- Tabs content: vertical scroll when content too tall --- */
+.tabs-content {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    max-height: 60vh !important;
+    min-height: 0;
+}
+
+/* --- Tab header: horizontal scroll when many tabs --- */
+.tabs-header-wrapper {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+}
+
+/* --- About section content --- */
+.about-section .container {
+    overflow-y: auto;
+    max-height: calc(100vh - 80px);
+}
+
+/* --- Projects grid: vertical scroll if many projects --- */
+.projects-grid {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    max-height: 70vh !important;
+}
+
+/* --- Every section stays locked to full-height, no layout shift --- */
+section {
+    overflow: hidden !important; /* section itself never scrolls - internal elements do */
+}
+
+/* Except: allow content inside section to scroll via inner containers above */
+.about-section,
+.projects-section,
+.products-section,
+.news-section {
+    overflow: hidden !important;
+}
+
+/* === FIX: Clear underline for active tabs === */
+
+
+/* Hide the old pseudo-element to prevent conflicts */
+
+
+.tab-btn.active {
+    font-weight: 500 !important;
+    color: var(--accent-color) !important;
+    border-bottom: 3px solid var(--accent-color) !important;
+}
+
+/* === HERO SECTION ELEGANT TINT === */
+.hero-section {
+    background: linear-gradient(135deg, rgba(240, 239, 235, 0.7) 0%, rgba(250, 249, 246, 1) 100%) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto;
+}
+
+/* Ensure the clock card is also centered nicely */
+.clock-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === DARK MODE === */
+[data-theme="dark"] {
+    --bg-color: #161616;
+    --bg-secondary: #202020;
+    --text-primary: #e0e0e0;
+    --text-secondary: #909090;
+    --accent-color: #7b8a78;
+    --border-color: #2d2d2d;
+}
+
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, rgba(28, 28, 28, 0.8) 0%, rgba(22, 22, 22, 1) 100%) !important;
+}
+
+[data-theme="dark"] #product-soft { background: rgba(35, 33, 30, 0.6) !important; border-radius: 8px; }
+[data-theme="dark"] #product-premium { background: rgba(30, 35, 33, 0.6) !important; border-radius: 8px; }
+[data-theme="dark"] #product-media { background: rgba(32, 32, 36, 0.6) !important; border-radius: 8px; }
+[data-theme="dark"] #product-tech { background: rgba(35, 30, 30, 0.6) !important; border-radius: 8px; }
+[data-theme="dark"] #product-smarthome { background: rgba(30, 34, 35, 0.6) !important; border-radius: 8px; }
+[data-theme="dark"] #product-cosmetics { background: rgba(35, 29, 34, 0.6) !important; border-radius: 8px; }
+
+[data-theme="dark"] .pricing-card {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* === FIX: Uniform Card Heights === */
+.product-grid {
+    align-items: stretch !important;
+}
+
+.product-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    margin-bottom: 0 !important; /* Let the grid gap handle spacing */
+}
+
+.product-card .status-tag {
+    margin-top: auto !important;
+    align-self: flex-start !important;
+}
+
+/* === SMART HORIZONTAL SCROLLBAR FOR TABS === */
+.tabs-header-wrapper {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.15) transparent;
+    padding-bottom: 5px;
+}
+[data-theme="dark"] .tabs-header-wrapper {
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+.tabs-header-wrapper::-webkit-scrollbar {
+    height: 4px;
+    display: block !important;
+}
+.tabs-header-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+.tabs-header-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+    border-radius: 4px;
+}
+[data-theme="dark"] .tabs-header-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Force 2-column layout for product grids on desktop */
+@media (min-width: 769px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+
+/* Dynamic News Styles */
+.news-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 15px;
+    margin-right: -15px;
+}
+.news-container::-webkit-scrollbar {
+    width: 6px;
+}
+.news-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+.news-container::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+.news-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+.news-loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-style: italic;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }

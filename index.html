@@ -10,9 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css?v=16">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
 
     <header class="navbar" id="navbar">
         <div class="container nav-content">
@@ -21,7 +26,12 @@
                 <a href="#hero">Trang chủ</a>
                 <a href="#about">Về tôi</a>
                 <a href="#projects">Dự án</a>
+                <a href="#products">Sản phẩm</a>
                 <a href="#news">Tin tức</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Đổi giao diện">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -30,11 +40,11 @@
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="container hero-content">
-                <p class="eyebrow fade-in-up">Chào mừng đến với không gian của tôi</p>
-                <h1 class="fade-in-up delay-1">Xin chào, tôi là Quang</h1>
-                <p class="subtitle fade-in-up delay-2">Thiết kế sáng tạo & Phát triển phần mềm</p>
+                <p class="eyebrow fade-in-up">Chào mừng bạn đến với không gian của tôi</p>
+                <h1 class="fade-in-up delay-1">Chào bạn, tôi là TheQuang</h1>
+                <p class="subtitle fade-in-up delay-2">Lăm băm - Thiết kế & Phát triển dự án linh tinh</p>
                 
-                <div class="clock-card fade-in-up delay-3">
+                <div class="clock-card fade-in-up delay-3" id="parallax-clock">
                     <p class="clock-label">Bây giờ là</p>
                     <div id="live-clock" class="clock-time">--:--:--</div>
                     <p id="live-date" class="clock-date">Đang tải ngày...</p>
@@ -104,10 +114,302 @@
             </div>
         </section>
 
+        
+                        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Sản phẩm Thương mại</h2>
+                <div class="tabs-container fade-in-up delay-1">
+                    <div class="tabs-header-wrapper">
+                        <div class="tabs-header">
+                            <button class="tab-btn active" data-tab="product-premium">Tài khoản Premium</button>
+                            <button class="tab-btn" data-tab="product-soft">Phần mềm</button>
+                            <button class="tab-btn" data-tab="product-personal">Quản lý cá nhân</button>
+                            <button class="tab-btn" data-tab="product-cosmetics">Mỹ phẩm</button>
+                            <button class="tab-btn" data-tab="product-media">Media</button>
+                            <button class="tab-btn" data-tab="product-tech">Công nghệ</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tabs-content">
+                        <!-- Category: Tài khoản Premium -->
+                        <div id="product-premium" class="tab-pane active">
+                            <div class="product-grid">
+                                <!-- Gemini Pro -->
+                                <div class="pricing-card" style="background-color: rgba(52, 152, 219, 0.05); border: 1px solid rgba(52, 152, 219, 0.4); box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1); position: relative;">
+                                    <div class="pricing-badge">Tiết kiệm ~98%</div>
+                                    <h4>Gemini Pro (Google AI)</h4>
+                                    <div class="price-section">
+                                        <span class="old-price">~8.820.000đ (490k/tháng)</span>
+                                        <span class="new-price">150.000đ</span>
+                                        <span class="duration">/ 18 Tháng</span>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li>Trợ lý AI thông minh nhất của Google.</li>
+                                        <li>Tặng kèm <strong style="color:var(--accent-color);">5TB Google Drive</strong>.</li>
+                                        <li>Tốc độ xử lý, viết lách, lên ý tưởng vượt trội.</li>
+                                        <li>Giải quyết tác vụ phức tạp, code logic.</li>
+                                        <li>Dữ liệu cập nhật theo thời gian thực.</li>
+                                    </ul>
+                                    <div class="warranty-status">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                        Bảo hành 7 ngày (Hỗ trợ kỹ thuật tuần đầu)
+                                    </div>
+                                    <a href="#modal-gemini" class="buy-btn open-modal-btn">Liên hệ mua ngay</a>
+                                </div>
+
+                                <!-- ChatGPT Plus -->
+                                <div class="pricing-card">
+                                    <div class="pricing-badge">Tiết kiệm ~20%</div>
+                                    <h4>ChatGPT Plus / OpenAI</h4>
+                                    <div class="price-section">
+                                        <span class="old-price">~520.000đ ($20/tháng)</span>
+                                        <span class="new-price">400.000đ</span>
+                                        <span class="duration">/ 1 Tháng</span>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li>Truy cập mô hình thông minh nhất: GPT-4, GPT-4o.</li>
+                                        <li>Trò chuyện giọng nói nâng cao (Advanced Voice).</li>
+                                        <li>Vẽ ảnh DALL-E 3, lướt web và phân tích dữ liệu.</li>
+                                        <li>Sử dụng và tạo các Custom GPTs chuyên biệt.</li>
+                                    </ul>
+                                    <div class="warranty-status">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                        Bảo hành trọn thời gian sử dụng
+                                    </div>
+                                    <a href="#modal-chatgpt" class="buy-btn open-modal-btn">Liên hệ mua ngay</a>
+                                </div>
+
+                                <!-- Canva Pro -->
+                                <div class="pricing-card">
+                                    <div class="pricing-badge">Tiết kiệm ~90%</div>
+                                    <h4>Canva Pro</h4>
+                                    <div class="price-section">
+                                        <span class="old-price">~149.000đ/tháng</span>
+                                        <span class="new-price">99.000đ</span>
+                                        <span class="duration">/ 1 Năm</span>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li>&#10003; Nâng cấp chính chủ email cá nhân.</li>
+                                        <li>&#10003; Kho lưu trữ 1TB Cloud.</li>
+                                        <li>&#10003; Magic Studio AI, Magic Eraser.</li>
+                                        <li>&#10003; Mở khóa 100+ triệu hình ảnh, video, âm thanh premium.</li>
+                                    </ul>
+                                    <div class="warranty-status">&#9919; Bảo hành 1 đổi 1 trọn thời gian</div>
+                                    <a href="#modal-canva" class="buy-btn open-modal-btn">Liên hệ mua ngay</a>
+                                </div>
+                                
+                                <!-- Capcut Pro -->
+                                <div class="pricing-card">
+                                    <div class="pricing-badge">Bán chạy</div>
+                                    <h4>Capcut Pro</h4>
+                                    <div class="price-section">
+                                        <span class="old-price">~200.000đ/tháng</span>
+                                        <span class="new-price">150.000đ</span>
+                                        <span class="duration">/ 6 Tháng</span>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li>&#10003; Mở khóa mọi hiệu ứng, filter độc quyền.</li>
+                                        <li>&#10003; Xóa nền thông minh, Tracking tự động.</li>
+                                        <li>&#10003; Chuyển văn bản thành giọng nói (AI Voice).</li>
+                                        <li>&#10003; Chỉnh sửa màu sắc chuyên nghiệp.</li>
+                                    </ul>
+                                    <div class="warranty-status">&#9919; Hỗ trợ kích hoạt tận tình</div>
+                                    <a href="#modal-capcut" class="buy-btn open-modal-btn">Liên hệ mua ngay</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category: Phần mềm -->
+                        <div id="product-soft" class="tab-pane">
+                            <div class="product-grid">
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:200px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color);">
+                                        <img src="./assets/office-translator.png" style="width:100%; height:100%; object-fit:cover;" alt="Office Translator Pro">
+                                    </div>
+                                    <h4>Office Translator Pro</h4>
+                                    <div class="price-section">
+                                        <span class="new-price">100.000đ</span>
+                                        <span class="duration">/ Bản quyền</span>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li>&#10003; Hỗ trợ dịch xuất file 5 thứ tiếng nhanh chóng.</li>
+                                        <li>&#10003; Giữ nguyên định dạng, format gốc 100%.</li>
+                                        <li>&#10003; Hỗ trợ toàn bộ định dạng Office 365 (.docx, .xlsx, .pptx).</li>
+                                    </ul>
+                                    <a href="#modal-translator" class="buy-btn open-modal-btn">Liên hệ mua ngay</a>
+                                </div>
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:200px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color);">
+                                        <img src="./assets/document-quick-access.png" style="width:100%; height:100%; object-fit:cover;" alt="Document Quick Access">
+                                    </div>
+                                    <h4>Document Quick Access</h4>
+                                    <div class="price-section">
+                                        <span class="new-price">50.000đ</span>
+                                        <span class="duration">/ Bản quyền</span>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li>&#10003; Thích hợp với người làm dữ liệu lớn, quản lý big data.</li>
+                                        <li>&#10003; Kiểm soát tiến độ công việc update hàng ngày.</li>
+                                        <li>&#10003; Hỗ trợ đầy đủ trên server local, drive, cloud.</li>
+                                    </ul>
+                                    <a href="#modal-doc-access" class="buy-btn open-modal-btn">Liên hệ mua ngay</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category: Quản lý cá nhân -->
+                        <div id="product-personal" class="tab-pane">
+                            <div class="product-grid">
+                                <!-- Doanh Thu Template -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:200px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color);">
+                                        <img src="./assets/template-doanh-thu-img.png" style="width:100%; height:100%; object-fit:cover;" alt="Dashboard Doanh Thu">
+                                    </div>
+                                    <h3>Dashboard Doanh Thu</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Template Excel quản lý doanh thu chuyên nghiệp. Thống kê, biểu đồ trực quan, dễ dàng theo dõi dòng tiền.</p>
+                                    <p class="modal-price">Miễn phí</p>
+                                    <a href="./assets/template-doanh-thu.xlsx" download class="btn" style="margin-top:auto; text-align:center;">Tải xuống <span style="color:#ff4757; font-weight:bold; text-transform:uppercase;">Free</span></a>
+                                </div>
+                                
+                                <!-- Ngân sách Template -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:200px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color);">
+                                        <img src="./assets/template-ngan-sach-img.png" style="width:100%; height:100%; object-fit:cover;" alt="Dashboard Ngân sách">
+                                    </div>
+                                    <h3>Dashboard Ngân Sách</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Bảng tính quản lý ngân sách hàng tháng. Phân bổ hợp lý, lên kế hoạch tài chính cá nhân hoàn hảo.</p>
+                                    <p class="modal-price">Miễn phí</p>
+                                    <a href="./assets/template-ngan-sach.xlsx" download class="btn" style="margin-top:auto; text-align:center;">Tải xuống <span style="color:#ff4757; font-weight:bold; text-transform:uppercase;">Free</span></a>
+                                </div>
+                                
+                                <!-- Chi tiêu Template -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:200px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color);">
+                                        <img src="./assets/template-chi-tieu-img.png" style="width:100%; height:100%; object-fit:cover;" alt="Dashboard Chi Tiêu">
+                                    </div>
+                                    <h3>Dashboard Chi Tiêu</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Hệ thống ghi chép và phân tích chi tiêu chi tiết. Kiểm soát thất thoát tài chính hiệu quả.</p>
+                                    <p class="modal-price">Miễn phí</p>
+                                    <a href="./assets/template-chi-tieu.xlsx" download class="btn" style="margin-top:auto; text-align:center;">Tải xuống <span style="color:#ff4757; font-weight:bold; text-transform:uppercase;">Free</span></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Category: Mỹ phẩm -->
+                        <div id="product-cosmetics" class="tab-pane">
+                            <div class="product-grid">
+                                <!-- L'Oreal Micellar Water -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:250px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color); background: #fff;">
+                                        <img src="./assets/loreal-micellar.jpg" style="width:100%; height:100%; object-fit:cover;" alt="L'Oréal Micellar Water">
+                                    </div>
+                                    <h3>Nước tẩy trang L'Oréal</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Xanh biển nhạt, đậm, hồng, tím, xám. Phù hợp cho mọi loại da (da mụn, nhạy cảm, da khô, da dầu).</p>
+                                    <p class="modal-price">Nhận Order</p>
+                                    <a href="#" class="btn open-modal-btn" data-modal="modal-zalo" style="margin-top:auto; text-align:center;">Liên hệ Zalo đặt hàng</a>
+                                </div>
+
+                                <!-- L'Oreal Cleanser -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:250px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color); background: #fff;">
+                                        <img src="./assets/loreal-cleanser.jpg" style="width:100%; height:100%; object-fit:cover;" alt="L'Oréal Sữa Rửa Mặt">
+                                    </div>
+                                    <h3>Sữa rửa mặt L'Oréal</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Loại màu hồng dành cho da dầu, hỗn hợp thiên dầu. Dưỡng sáng, giảm thâm mụn, thu nhỏ lỗ chân lông.</p>
+                                    <p class="modal-price">Nhận Order</p>
+                                    <a href="#" class="btn open-modal-btn" data-modal="modal-zalo" style="margin-top:auto; text-align:center;">Liên hệ Zalo đặt hàng</a>
+                                </div>
+
+                                <!-- L'Oreal Face Cream -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:250px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color); background: #fff;">
+                                        <img src="./assets/loreal-cream.jpg" style="width:100%; height:100%; object-fit:cover;" alt="L'Oréal Face Cream">
+                                    </div>
+                                    <h3>Kem dưỡng L'Oréal</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Dòng Matte Luminizing Cream & Glowing Cream Day. Dưỡng sáng, chống nắng, ngăn thâm nám, glow mướt.</p>
+                                    <p class="modal-price">Nhận Order</p>
+                                    <a href="#" class="btn open-modal-btn" data-modal="modal-zalo" style="margin-top:auto; text-align:center;">Liên hệ Zalo đặt hàng</a>
+                                </div>
+
+                                <!-- L'Oreal Sunscreen -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:250px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color); background: #fff;">
+                                        <img src="./assets/loreal-sunscreen.jpg" style="width:100%; height:100%; object-fit:cover;" alt="L'Oréal UV Defender">
+                                    </div>
+                                    <h3>Kem chống nắng L'Oréal</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Các dòng Fresh Matte, Invisible Resist, Invisible Fluid, Aquafusion. Mỏng nhẹ, kiềm dầu, không vón cục.</p>
+                                    <p class="modal-price">Nhận Order</p>
+                                    <a href="#" class="btn open-modal-btn" data-modal="modal-zalo" style="margin-top:auto; text-align:center;">Liên hệ Zalo đặt hàng</a>
+                                </div>
+
+                                <!-- L'Oreal Lipstick -->
+                                <div class="pricing-card">
+                                    <div class="product-image-container" style="width:100%; height:250px; overflow:hidden; border-radius:8px; margin-bottom:15px; border: 1px solid var(--border-color); background: #fff;">
+                                        <img src="./assets/loreal-lipstick.jpg" style="width:100%; height:100%; object-fit:cover;" alt="L'Oréal Son Môi">
+                                    </div>
+                                    <h3>Son L'Oréal</h3>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Đa dạng màu hot: 215 (Drunk In Rose), 601 (Worth It), 635 (Worth It Medium), 600 (Le Nu Rose)...</p>
+                                    <p class="modal-price">Nhận Order</p>
+                                    <a href="#" class="btn open-modal-btn" data-modal="modal-zalo" style="margin-top:auto; text-align:center;">Liên hệ Zalo đặt hàng</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Category: Media -->
+                        <div id="product-media" class="tab-pane">
+                            <div class="product-grid">
+                                <a href="#" class="product-card" target="_blank">
+                                    <h4>Dịch vụ Dựng Video</h4>
+                                    <p>Chỉnh sửa, cắt ghép video chuyên nghiệp (Vlog, Shorts, TikTok, Doanh nghiệp).</p>
+                                    <span class="status-tag">Liên hệ báo giá</span>
+                                </a>
+                                <a href="#" class="product-card" target="_blank">
+                                    <h4>Chỉnh sửa Hình ảnh</h4>
+                                    <p>Retouch ảnh chân dung, ảnh sản phẩm thương mại sắc nét.</p>
+                                    <span class="status-tag">Liên hệ báo giá</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Category: Công nghệ -->
+                        <div id="product-tech" class="tab-pane">
+                            <div class="product-grid">
+                                <a href="#" class="product-card" target="_blank">
+                                    <h4>Website Cá Nhân</h4>
+                                    <p>Gói thiết kế website Portfolio tối giản và tinh tế.</p>
+                                    <span class="status-tag">Đang nhận đặt hàng</span>
+                                </a>
+                                <a href="#" class="product-card" target="_blank">
+                                    <h4>Hệ thống Landing Page</h4>
+                                    <p>Tối ưu tỷ lệ chuyển đổi cho sản phẩm và chiến dịch.</p>
+                                    <span class="status-tag">Đang nhận đặt hàng</span>
+                                </a>
+                                <a href="#" class="product-card" target="_blank">
+                                    <h4>Cảm biến & Công tắc thông minh</h4>
+                                    <p>Tự động hóa ánh sáng theo ngữ cảnh.</p>
+                                    <span class="status-tag">Chờ update</span>
+                                </a>
+                                <a href="#" class="product-card" target="_blank">
+                                    <h4>Rèm tự động</h4>
+                                    <p>Điều khiển từ xa qua smartphone.</p>
+                                    <span class="status-tag">Chờ update</span>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- News Section (Tabs) -->
         <section id="news" class="news-section">
             <div class="container">
-                <h2 class="section-title fade-in-up">Tiêu điểm 24h</h2>
+                <h2 class="section-title fade-in-up">Tiêu điểm trong tuần</h2>
                 <div class="tabs-container fade-in-up delay-1">
                     <div class="tabs-header-wrapper">
                         <div class="tabs-header">
@@ -115,102 +417,496 @@
                             <button class="tab-btn" data-tab="economy-news">Kinh tế</button>
                             <button class="tab-btn" data-tab="stock-news">Cổ phiếu</button>
                             <button class="tab-btn" data-tab="auto-news">Xe & Auto</button>
+                            <button class="tab-btn" data-tab="football-news">Bóng đá</button>
                             <button class="tab-btn" data-tab="esports-news">Esports</button>
                         </div>
                     </div>
                     
                     <div class="tabs-content">
-                        <!-- Tech News Tab -->
+                        <!-- tech-news Tab -->
                         <div id="tech-news" class="tab-pane active">
-                            <article class="news-item">
-                                <h3>Chính thức tắt sóng 2G tại Việt Nam</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Cột mốc quan trọng trong lộ trình hiện đại hóa hạ tầng viễn thông, tái quy hoạch tài nguyên tần số để tập trung phát triển công nghệ 4G và 5G trên toàn quốc.</p>
-                            </article>
-                            <article class="news-item">
-                                <h3>Tesla chính thức mở pháp nhân tại Việt Nam</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Hãng xe điện lớn nhất thế giới đánh dấu bước tiến mới bằng việc thành lập doanh nghiệp với số vốn điều lệ gần 77,7 tỷ đồng.</p>
-                            </article>
-                            <article class="news-item">
-                                <h3>Kêu gọi phanh hãm sự phát triển của siêu AI</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>CEO OpenAI, Anthropic cùng Elon Musk đồng loạt cảnh báo về nguy cơ mất kiểm soát và sự tập trung quyền lực quá mức vào các mô hình AI thế hệ mới.</p>
-                            </article>
+                            <div class="news-container">
+                                <article class="news-item">
+                                    <h3>DeepSeek và truyền thông Trung Quốc hoài nghi động cơ 'giảm tốc AI' <a href="https://vnexpress.net/deepseek-va-truyen-thong-trung-quoc-hoai-nghi-dong-co-giam-toc-ai-5120774.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Chuyên gia và truyền thông Trung Quốc đồng loạt đặt câu hỏi về động cơ của việc kêu gọi kìm hãm sự phát triển AI của Anthropic.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Ý tưởng về iPhone Duo bắt đầu từ 15 năm trước <a href="https://vnexpress.net/y-tuong-ve-iphone-duo-bat-dau-tu-15-nam-truoc-5120685.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Ý tưởng phát triển iPhone màn hình gập được cho là bắt nguồn từ ngày 30/9/2011, khi Apple nộp đơn xin cấp bằng sáng chế cho "thiết bị điện tử linh hoạ...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Công nghệ thông minh trên siêu kênh đào 10 tỷ USD <a href="https://vnexpress.net/cong-nghe-thong-minh-tren-sieu-kenh-dao-10-ty-usd-5120645.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Kênh đào Bình Lục là "công trình thế kỷ" của Trung Quốc, sử dụng công nghệ bản sao số thông minh để tàu trọng tải lớn di chuyển hiệu quả và an toàn.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>OpenAI thuê người đọc hội thoại ChatGPT của người dùng <a href="https://vnexpress.net/openai-thue-nguoi-doc-hoi-thoai-chatgpt-cua-nguoi-dung-5120686.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>OpenAI được cho là thực hiện dự án bí mật Project Lily, trong đó công ty thuê hàng trăm người xem các đoạn hội thoại thực tế của người dùng ChatGPT.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Ecovacs T80 Max - robot lau nhà mạnh nhất phân khúc tầm trung <a href="https://vnexpress.net/ecovacs-t80-max-robot-lau-nha-manh-nhat-phan-khuc-tam-trung-5120674.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Ecovacs Deebot T80 Max Omni có lực hút 40.000 Pa, hệ thống con lăn lau nhà dài 27 cm, đều lớn nhất trong phân khúc dưới 20 triệu đồng.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>'Giảng đường Việt là bể nhân tài bán dẫn chất lượng' <a href="https://vnexpress.net/giang-duong-viet-la-be-nhan-tai-ban-dan-chat-luong-5119633.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Lĩnh vực bán dẫn cần có sự thực chiến từ giảng đường với sinh viên và giảng viên là nòng cốt, doanh nghiệp hỗ trợ, theo TS Nguyễn Văn Thái.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Jensen Huang ứng xử thế nào khi nhân viên rời đi <a href="https://vnexpress.net/jensen-huang-ung-xu-the-nao-khi-nhan-vien-roi-di-5120147.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Jensen Huang, CEO Nvidia, nhiều lần đưa ra lời khuyên chân thành với những nhân viên muốn nghỉ việc để thành lập startup riêng.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Lý do tàu ngầm hạt nhân có thể ở nhiều tháng dưới nước <a href="https://vnexpress.net/ly-do-tau-ngam-hat-nhan-co-the-o-nhieu-thang-duoi-nuoc-5119343.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Tàu ngầm Astute của Anh có thể ở dưới nước 25 năm trước khi cần nạp nhiên liệu, trong khi lõi lò phản ứng dùng trong tàu hải quân hiện đại của Mỹ có t...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Giải pháp hỗ trợ tiểu thương số hóa hoạt động kinh doanh <a href="https://vnexpress.net/giai-phap-ho-tro-tieu-thuong-so-hoa-hoat-dong-kinh-doanh-5120989.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>MoMo mở rộng hệ sinh thái giải pháp, từ thanh toán QR, quản lý thu chi đến cấp vốn và kết nối bán hàng đa kênh, nhằm hỗ trợ số hóa hoạt động kinh doan...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>AirPods 5 - bản nâng cấp lớn về chống ồn chủ động <a href="https://vnexpress.net/airpods-5-ban-nang-cap-lon-ve-chong-on-chu-dong-5120467.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">15 Tháng 9, 2026</span>
+                                    <p>AirPods 5 được đánh giá là một trong những mẫu tai nghe dạng mở có khả năng chống ồn chủ động ANC tốt nhất hiện nay.</p>
+                                </article>
+                            </div>
                         </div>
-                        
-                        <!-- Economy News Tab -->
+                        <!-- economy-news Tab -->
                         <div id="economy-news" class="tab-pane">
-                            <article class="news-item">
-                                <h3>Vinh danh doanh nghiệp nộp ngân sách lớn nhất (VNTAX)</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Top 200 doanh nghiệp đóng góp gần 1 triệu tỷ đồng, tương đương hơn 37% tổng thu ngân sách quốc gia, khẳng định vai trò trụ cột của khối doanh nghiệp.</p>
-                            </article>
-                            <article class="news-item">
-                                <h3>Duy trì đà tăng trưởng nhưng áp lực lạm phát hiện hữu</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Sản xuất công nghiệp và FDI tiếp tục tăng mạnh, song các cơ quan chức năng đặc biệt lưu ý CPI tiến sát mục tiêu 4,5% và tình trạng nhập siêu gia tăng.</p>
-                            </article>
+                            <div class="news-container">
+                                <article class="news-item">
+                                    <h3>Phó thủ tướng đề nghị Quảng Tây tạo thuận lợi cho hàng hóa Việt Nam <a href="https://vnexpress.net/pho-thu-tuong-de-nghi-quang-tay-tao-thuan-loi-cho-hang-hoa-viet-nam-5121018.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Phó thủ tướng Thường trực Phạm Gia Túc đề nghị Quảng Tây tạo thuận lợi cho hàng Việt vào Trung Quốc và đi nước thứ ba, đồng thời đẩy nhanh các tuyến đ...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Hơn 700 hồ thủy điện có nguy cơ không tích đủ nước do El Nino <a href="https://vnexpress.net/hon-700-ho-thuy-dien-co-nguy-co-khong-tich-du-nuoc-do-el-nino-5120811.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Hơn 700 hồ thủy điện có nguy cơ không tích đủ nước theo thiết kế do ảnh hưởng của El Nino, với tổng dung tích thiếu khoảng 7,73-11 tỷ m3.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Sàn crypto sẽ phải báo cáo những gì về nhà đầu tư? <a href="https://vnexpress.net/san-crypto-se-phai-bao-cao-nhung-gi-ve-nha-dau-tu-5120816.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Bộ Tài chính muốn yêu cầu sàn crypto báo cáo cơ cấu nhà đầu tư, chia theo từng ngưỡng giá trị, lượng tài sản lưu ký, giao dịch bất thường…</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Dragon Capital đầu tư trở lại cổ phiếu PNJ <a href="https://vnexpress.net/dragon-capital-dau-tu-tro-lai-co-phieu-pnj-5120987.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Hai quỹ DCDS và DCDE của Dragon Capital đưa cổ phiếu PNJ trở lại danh mục trong tháng 8, chỉ một tháng sau khi đưa tỷ trọng mã này về 0%.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Thanh long xuất khẩu còn 2.000 đồng một kg <a href="https://vnexpress.net/thanh-long-xuat-khau-con-2-000-dong-mot-kg-5120672.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Vụ thanh long Rằm tháng 8 ở vùng trồng Bình Thuận mất giá sâu, hàng xuất khẩu chỉ được mua 2.000-7.000 đồng một kg, khiến nông dân thua lỗ nặng.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Canada và thế khó của 'nền kinh tế hướng Mỹ' <a href="https://vnexpress.net/canada-va-the-kho-cua-nen-kinh-te-huong-my-5120565.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Nền kinh tế hướng Mỹ giúp hàng hóa xuất khẩu của Canada hưởng lợi nhưng đồng thời dễ tổn thương khi thương chiến với ông Trump nổ ra.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Chuyên gia: Cơ hội gom cổ phiếu giá rẻ vẫn còn <a href="https://vnexpress.net/chuyen-gia-co-hoi-gom-co-phieu-gia-re-van-con-5120492.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Định giá cổ phiếu của hầu hết ngành cốt lõi đang thấp hơn mức trung bình nhiều năm, mở ra cơ hội tích lũy trong các nhịp điều chỉnh.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Ngành dầu mỏ Mỹ cảnh báo khủng hoảng nhiên liệu <a href="https://vnexpress.net/nganh-dau-mo-my-canh-bao-khung-hoang-nhien-lieu-5120636.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Suốt nhiều tháng, các lãnh đạo ngành dầu mỏ Mỹ cảnh báo phong tỏa Hormuz thời gian dài sẽ gây khủng hoảng nhiên liệu, và giờ việc đó đã xảy ra.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Kho bạc tăng tốc huy động trái phiếu chính phủ <a href="https://vnexpress.net/kho-bac-tang-toc-huy-dong-trai-phieu-chinh-phu-5120717.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Nhu cầu phát hành tăng mạnh để hoàn thành mục tiêu huy động 500.000 tỷ đồng có thể khiến lợi suất trái phiếu chính phủ nhích nhẹ ở các kỳ hạn ngắn.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Bảo Tín Mạnh Hải ra mắt quà tặng vàng 24K mùa Trung thu <a href="https://vnexpress.net/bao-tin-manh-hai-ra-mat-qua-tang-vang-24k-mua-trung-thu-5120624.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Quà tặng vàng 24K Kim Gia Bảo Gift mùa Trung thu của Bảo Tín Mạnh Hải kết hợp giá trị tích lũy với lời chúc, hình ảnh, video trên không gian số.</p>
+                                </article>
+                            </div>
                         </div>
-
-                        <!-- Stock News Tab -->
+                        <!-- stock-news Tab -->
                         <div id="stock-news" class="tab-pane">
-                            <article class="news-item">
-                                <h3>VN-Index kiểm định lại mốc hỗ trợ quan trọng</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Chỉ số thị trường tiếp tục ghi nhận phiên giảm điểm về 1.788 điểm, tuy nhiên thanh khoản tăng mạnh 15% cho thấy lực cầu bắt đáy bắt đầu xuất hiện.</p>
-                            </article>
-                            <article class="news-item">
-                                <h3>Khối ngoại bất ngờ mua ròng kỷ lục</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Điểm sáng lớn khi khối ngoại đảo chiều mua ròng tới hơn 820 tỷ đồng trên HOSE, tập trung vào nhóm Năng lượng (GAS, BSR) và Bảo hiểm (BVH).</p>
-                            </article>
+                            <div class="news-container">
+                                <article class="news-item">
+                                    <h3>Cổ phiếu SSB tăng 48% trong chưa đầy 1 tháng: Dòng tiền nào đứng sau? <a href="https://cafef.vn/co-phieu-ssb-tang-48-trong-chua-day-1-thang-dong-tien-nao-dung-sau-188260916164435557.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Cổ phiếu SSB đã có 3 phiên tăng trần liên tiếp và ghi nhận mức tăng hơn 48% trong chưa đầy 1 tháng, lên vùng giá cao nhất khoảng 3 năm, trong bối cảnh...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Meey Global Corp thông báo nộp hồ sơ đăng ký chứng khoán lên SEC <a href="https://cafef.vn/meey-global-corp-thong-bao-nop-ho-so-dang-ky-chung-khoan-len-sec-188260916163930154.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Meey Global Corp, công ty mẹ (holding company) thành lập tại Quần đảo Cayman, vận hành hệ sinh thái tích hợp gồm các nền tảng bất động sản số và dịch ...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Ông Trần Quí Thanh muốn làm dự án khu công nghiệp 800ha tại TP.HCM <a href="https://cafef.vn/ong-tran-qui-thanh-muon-lam-du-an-khu-cong-nghiep-800ha-tai-tphcm-188260916154137518.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Một người có tên là Trần Quí Thanh - Chủ tịch HĐQT kiêm Tổng giám đốc Công ty CP Công nghiệp Đô thị Ngãi Giao - Sài Gòn vừa có văn bản gửi tới chính q...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Phiên 16/9: Khối ngoại tiếp đà mua ròng, một cổ phiếu ngân hàng được gom hơn 200 tỷ <a href="https://cafef.vn/phien-16-9-khoi-ngoai-tiep-da-mua-rong-mot-co-phieu-ngan-hang-duoc-gom-hon-200-ty-188260916155210295.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Giao dịch của khối ngoại là điểm cộng khi mua ròng khoảng 237 tỷ đồng cổ phiếu trên toàn thị trường.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Sau 2 tháng nhận chức, CEO HanaGold thừa nhận thanh khoản vẫn là khó khăn lớn nhất, tiết lộ 6 giai đoạn hoạt động trở lại và trả tiền khách hàng <a href="https://cafef.vn/sau-2-thang-nhan-chuc-ceo-hanagold-thua-nhan-thanh-khoan-van-la-kho-khan-lon-nhat-tiet-lo-6-giai-doan-hoat-dong-tro-lai-va-tra-tien-khach-hang-18826091615440714.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Doanh nghiệp công bố 6 mốc thời gian dự kiến đến tháng 10 từ xác nhận tài sản, đưa HanaSilver vào hoạt động đến hoàn trả tiền và khôi phục hoạt động n...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Áp lực nguồn vốn, nhiều ngân hàng đẩy mạnh phát hành giấy tờ có giá <a href="https://cafef.vn/ap-luc-nguon-von-nhieu-ngan-hang-day-manh-phat-hanh-giay-to-co-gia-188260916154251385.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Áp lực thanh khoản khiến nhiều ngân hàng tăng tốc phát hành giấy tờ có giá với lãi suất 8–10%/năm, đồng thời dòng vốn tín dụng tiếp tục chảy mạnh vào ...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>CEO Kafi: “Sau giai đoạn xây nền tảng, Kafi bước vào bài toán tăng trưởng bằng hiệu quả” <a href="https://cafef.vn/ceo-kafi-sau-giai-doan-xay-nen-tang-kafi-buoc-vao-bai-toan-tang-truong-bang-hieu-qua-188260916143058465.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Sau hơn bốn năm tái cấu trúc, Chứng khoán Kafi đã mở rộng mạnh về vốn, tài sản, dư nợ và khách hàng. Việc KAI giao dịch trên UPCoM từ 9/9 đánh dấu gia...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>MBS bứt phá lên Top 6 CTCK đóng góp ngân sách lớn nhất, dấu ấn từ một năm tăng tốc <a href="https://cafef.vn/mbs-but-pha-len-top-6-ctck-dong-gop-ngan-sach-lon-nhat-dau-an-tu-mot-nam-tang-toc-188260916150127873.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Tại Lễ vinh danh VNTAX 2026 thuộc hệ thống CafeF List, MBS được trao cúp Top 6 công ty chứng khoán đóng góp ngân sách Nhà nước lớn nhất Việt Nam. Với ...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Nhà đầu tư chứng khoán "nín thở" đếm ngược 12 tiếng <a href="https://cafef.vn/nha-dau-tu-chung-khoan-nin-tho-dem-nguoc-12-tieng-188260916144842223.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Khả năng Fed tăng lãi suất tại cuộc họp ngày 15-16/9 hiện được thị trường định giá ở mức rất cao.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Em trai ông Nguyễn Duy Hưng chi hơn trăm tỷ mua cổ phiếu SSI ngay trước “giờ G” nâng hạng <a href="https://cafef.vn/em-trai-ong-nguyen-duy-hung-chi-hon-tram-ty-mua-co-phieu-ssi-ngay-truoc-gio-g-nang-hang-188260916141311876.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 26</span>
+                                    <p>Động thái của "sếp" SSI diễn ra ngay trước khi chứng khoán Việt Nam chính thức lên thị trường mới nổi thứ cấp của FTSE Russell vào ngày 21/9.</p>
+                                </article>
+                            </div>
                         </div>
-
-                        <!-- Auto News Tab -->
+                        <!-- auto-news Tab -->
                         <div id="auto-news" class="tab-pane">
-                            <article class="news-item">
-                                <h3>Kỷ lục mới: Concept xe điện đi 1.278km mỗi lần sạc</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Volkswagen giới thiệu mẫu "Mission Efficiency" tối ưu khí động học hình giọt nước, định hình lại ranh giới của các dòng xe điện thương mại tương lai.</p>
-                            </article>
-                            <article class="news-item">
-                                <h3>Lên ngôi xu hướng xe điện mở rộng phạm vi (REEV)</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Thị trường Việt Nam đang chuyển dịch sang dòng xe REEV, chạy hoàn toàn bằng điện nhưng sử dụng xăng để nạp pin, xóa tan nỗi lo về trạm sạc.</p>
-                            </article>
+                            <div class="news-container">
+                                <article class="news-item">
+                                    <h3>Ôtô vượt qua xe khác rồi dừng lại chặn đầu giữa cao tốc <a href="https://vnexpress.net/oto-vuot-qua-xe-khac-roi-dung-lai-chan-dau-giua-cao-toc-5120870.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Chiếc SUV vượt lên từ làn khẩn cấp rồi phanh gấp trước đầu xe có gắn camera hành trình tại Đại lộ Thăng Long, hôm 14/9.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Đèn rẽ trái màu xanh, biển cấm rẽ, cần làm thế nào? <a href="https://vnexpress.net/den-re-trai-mau-xanh-bien-cam-re-can-lam-the-nao-5120778.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Trường hợp gặp đèn mũi tên màu xanh cho phép rẽ trái nhưng ngay phía dưới là biển báo cấm rẽ, tôi đi thế nào đúng luật. (Phan Anh)</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>SUV đâm xuyên xe buýt, ba người thiệt mạng <a href="https://vnexpress.net/suv-dam-xuyen-xe-buyt-ba-nguoi-thiet-mang-5120955.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Chiếc SUV đâm thủng mạn trái của xe buýt và gần một nửa xe lọt vào trong khiến ít nhất 3 người chết và 6 người bị thương.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>MPV cỡ B tháng 8 - doanh số giảm, Xpander vẫn dẫn đầu <a href="https://vnexpress.net/mpv-co-b-thang-8-doanh-so-giam-xpander-van-dan-dau-5120736.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Sức mua chững lại ở tháng 8 nhưng lũy kế từ đầu 2026 vẫn tăng nhẹ so với cùng kỳ 2025, Xpander tiếp tục ăn khách nhất.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Ôtô xô ngã bà cụ đi xe đạp rồi bỏ đi <a href="https://vnexpress.net/oto-xo-nga-ba-cu-di-xe-dap-roi-bo-di-5120751.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Ôtô màu trắng vượt phải, đánh lái sát lề đường, xô ngã một người phụ nữ đi xe đạp, hôm 15/9 tại Điềm Thụy.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Hiểm họa khi học sinh tự 'mở tốc' xe đạp điện lên gần 100 km/h <a href="https://vnexpress.net/hiem-hoa-khi-hoc-sinh-tu-mo-toc-xe-dap-dien-len-gan-100-km-h-5120520.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Chỉ với vài trăm nghìn đồng, xe đạp điện giới hạn 25 km/h có thể được "mở tốc" lên mức 100 km/h, tiềm ẩn nhiều nguy hiểm cho người dùng.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Sedan cỡ C tháng 8: Cuộc đua ngày càng lệch về Mazda3 <a href="https://vnexpress.net/sedan-co-c-thang-8-cuoc-dua-ngay-cang-lech-ve-mazda3-5120877.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Doanh số sedan cỡ C tháng 8 giảm nhẹ, trong khi Mazda3 tiếp tục dẫn đầu, bỏ xa Civic và các đối thủ còn lại trong phân khúc.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Mỹ yêu cầu Tesla giải trình về an toàn của robotaxi <a href="https://vnexpress.net/my-yeu-cau-tesla-giai-trinh-ve-an-toan-cua-robotaxi-5120748.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Cơ quan an toàn giao thông quốc gia Mỹ buộc Tesla làm rõ căn cứ kỹ thuật khi tự cấp phép cho Cybercab - mẫu xe không pedal và vô-lăng.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Đi trời mưa nên bật đèn xe như thế nào? <a href="https://vnexpress.net/di-troi-mua-nen-bat-den-xe-nhu-the-nao-5112577.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Bật đèn pha ở chế độ chiếu gần hay chiếu xa, có nên dùng đèn khẩn cấp hay không là những thắc mắc của nhiều tài xế mới.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Kia PV7 - xe van điện ra mắt, cạnh tranh Ford E-Transit <a href="https://vnexpress.net/kia-pv7-xe-van-dien-ra-mat-canh-tranh-ford-e-transit-5120263.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Mẫu xe van thuần điện cung cấp hai biến thể, chở hàng và chở khách, tùy chọn nhiều cấu hình, bán ra trong nửa cuối năm 2027.</p>
+                                </article>
+                            </div>
                         </div>
-
-                        <!-- Esports News Tab -->
+                        <!-- football-news Tab -->
+                        <div id="football-news" class="tab-pane">
+                            <div class="news-container">
+                                <article class="news-item">
+                                    <h3>FIFA cấm CLB Công an Hà Nội đăng ký cầu thủ mới đến năm 2028 <a href="https://vnexpress.net/fifa-cam-clb-cong-an-ha-noi-dang-ky-cau-thu-moi-den-nam-2028-5121041.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>FIFA cấm ĐKVĐ V-League đăng ký cầu thủ mới trong ba kỳ chuyển nhượng tiếp theo, tức đến hết mùa giải 2027-2028.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>CLB đối thủ chế nhạo Ronaldo vấp cỏ <a href="https://vnexpress.net/clb-doi-thu-che-nhao-ronaldo-vap-co-5120854.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Al Ain đăng ảnh kèm lời bình về tình huống Cristiano Ronaldo nằm sân sau trận thắng Al Nassr 4-0 ở vòng phân hạng AFC Champions League tối 15/9.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Cựu trung vệ Pháp: 'Tôi chưa từng thấy Messi nói về Quả Bóng Vàng như Mbappe' <a href="https://vnexpress.net/cuu-trung-ve-phap-toi-chua-tung-thay-messi-noi-ve-qua-bong-vang-nhu-mbappe-5120764.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Cựu trung vệ đội tuyển Pháp Samuel Umtiti cho rằng cuộc chiến truyền thông để chạy đua cho Quả Bóng Vàng 2026 đã khiến Kyian Mbappe đưa ra những phát ...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Indonesia mất cầu thủ Serie A ở FIFA ASEAN Cup 2026 <a href="https://vnexpress.net/indonesia-mat-cau-thu-serie-a-o-fifa-asean-cup-2026-5120912.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Trung vệ Jay Idzes, đang chơi cho Sassuolo ở Serie A, chấn thương cơ đùi dẫn đến lỡ hẹn FIFA ASEAN Cup 2026 cùng đội tuyển Indonesia.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Người mẹ không để bệnh tiểu đường định nghĩa Zverev <a href="https://vnexpress.net/nguoi-me-khong-de-benh-tieu-duong-dinh-nghia-zverev-5120865.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Nhờ sự kiên định của mẹ Irina Zvereva, tay vợt người Đức Alexander Zverev vượt qua hơn hai thập niên kiểm soát căn bệnh tiểu đường tuýp 1, để giành ha...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Ronaldo nhận thất bại đậm nhất trong hơn 4 năm <a href="https://vnexpress.net/ronaldo-nhan-that-bai-dam-nhat-trong-hon-4-nam-5120882.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Trận thua Al Ain 0-4 ở lượt đầu vòng phân hạng AFC Champions League Elite ngày 15/9 là thất bại đậm nhất của Cristiano Ronaldo từ khi khoác áo Al Nass...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Cơn giận khiến Sabalenka trả giá ở Mỹ Mở rộng 2026 <a href="https://vnexpress.net/con-gian-khien-sabalenka-tra-gia-o-my-mo-rong-2026-5120804.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Không thể kiểm soát cảm xúc trong những thời điểm quan trọng, tay vợt nữ số hai thế giới Aryna Sabalenka đang để sự nóng nảy trở thành rào cản trên đư...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Vì sao bóng đá Hàn Quốc muốn dời lịch thi đấu theo chuẩn châu Âu? <a href="https://vnexpress.net/vi-sao-bong-da-han-quoc-muon-doi-lich-thi-dau-theo-chuan-chau-au-5120598.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Bóng đá Hàn Quốc đang loay hoay tìm ra thời điểm vàng để tổ chức giải VĐQG K-League, trong nỗ lực theo chân Nhật Bản để đồng bộ với lịch thi đấu chuẩn...</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Mourinho: 'Xem Real đá không lo buồn ngủ' <a href="https://vnexpress.net/mourinho-xem-real-da-khong-lo-buon-ngu-5120733.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>HLV Jose Mourinho thừa nhận Real Madrid mất quyền kiểm soát sau khi dẫn Elche 2-0, nhưng hài lòng vì đội vẫn thắng 3-2 ở vòng 6 La Liga.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Bóng chuyền nữ Việt Nam thắng dễ ở ASIAD 2026 <a href="https://vnexpress.net/bong-chuyen-nu-viet-nam-thang-de-o-asiad-2026-5120934.html" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">16 Tháng 9, 2026</span>
+                                    <p>Việt Nam dễ dàng hạ Qatar 3-0 ở lượt ra quân bảng D môn bóng chuyền nữ trong nhà ASIAD 2026, trưa 16/9.</p>
+                                </article>
+                            </div>
+                        </div>
+                        <!-- esports-news Tab -->
                         <div id="esports-news" class="tab-pane">
-                            <article class="news-item">
-                                <h3>Chung Kết Thế Giới LMHT 2026 lộ diện các anh tài</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Gen.G, T1 và G2 Esports chính thức ghi danh. Giải đấu quan trọng nhất năm sẽ khởi tranh tại Mỹ từ giữa tháng 10 tới.</p>
-                            </article>
-                            <article class="news-item">
-                                <h3>VCT Champions 2026: Đếm ngược ngày khai mạc</h3>
-                                <span class="news-date">15 Tháng 9, 2026</span>
-                                <p>Cộng đồng Valorant toàn cầu đang hướng mắt về Thượng Hải khi sự kiện quốc tế lớn nhất chuẩn bị bắt đầu sau khi Stage 2 khu vực kết thúc.</p>
-                            </article>
+                            <div class="news-container">
+                                <article class="news-item">
+                                    <h3>Xuất hiện thông tin thượng tầng T1 bất ổn khiến cộng đồng lo ngại cho tương lai tuyển thủ <a href="https://cl44.cnnd.vn/xuat-hien-thong-tin-thuong-tang-t1-bat-on-khien-cong-dong-lo-ngai-cho-tuong-lai-tuyen-thu-178260915223202666.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">15 Tháng 9, 2026</span>
+                                    <p>Nội bộ T1 có thể sẽ có biến động ngay sau khi mùa giải 2026 kết thúc.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Một chi tiết cho thấy HLE "tự thua" trước khi trận đấu bắt đầu <a href="https://cl44.cnnd.vn/mot-chi-tiet-cho-thay-hle-tu-thua-truoc-khi-tran-dau-bat-dau-178260915013258134.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">15 Tháng 9, 2026</span>
+                                    <p>HLE đã tự "đánh mất chính mình" trước Gen.G.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Gen.G đối diện "lời nguyền LCK" tại CKTG 2026 <a href="https://cl44.cnnd.vn/geng-doi-dien-loi-nguyen-lck-tai-cktg-2026-178260914163149527.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">14 Tháng 9, 2026</span>
+                                    <p>Gen.G đến với CKTG 2026 với một "dớp" cực nặng liên quan LCK.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>LMHT 2026 chứng kiến chuyện kỳ lạ bậc nhất lịch sử Esports <a href="https://cl44.cnnd.vn/lmht-2026-chung-kien-chuyen-ky-la-bac-nhat-lich-su-esports-178260914022421659.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">14 Tháng 9, 2026</span>
+                                    <p>BTC LCK và Riot có một quyết định khiến khán giả LMHT ngỡ ngàng.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Kanavi thừa nhận một sự thật khi HLE đối đầu với Gen.G <a href="https://cl44.cnnd.vn/kanavi-thua-nhan-mot-su-that-khi-hle-doi-dau-voi-geng-178260914005705926.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">14 Tháng 9, 2026</span>
+                                    <p>Mùa giải LCK đầu tiên của Kanavi và đội trưởng của HLE cũng chia sẻ cảm giác khi đối đầu Gen.G.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Một thế mạnh của HLE đã trở thành "sai lầm chí mạng" trong trận thua Gen.G <a href="https://cl44.cnnd.vn/mot-the-manh-cua-hle-da-tro-thanh-sai-lam-chi-mang-trong-tran-thua-geng-178260913222446336.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">13 Tháng 9, 2026</span>
+                                    <p>Sai lầm của HLE lại từ chính thế mạnh của họ.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>HLE sở hữu thành tích đặc biệt khi đối đầu T1 <a href="https://cl44.cnnd.vn/hle-so-huu-thanh-tich-dac-biet-khi-doi-dau-t1-17826091301582211.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">13 Tháng 9, 2026</span>
+                                    <p>Với HLE thì một "bài tủ" của T1 luôn bị khắc chế.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Một siêu sao của T1 đã khiến chính fan cũng "sáng mắt ra" <a href="https://cl44.cnnd.vn/mot-sieu-sao-cua-t1-da-khien-chinh-fan-cung-sang-mat-ra-178260912211211293.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">12 Tháng 9, 2026</span>
+                                    <p>Rõ ràng tuyển thủ này của T1 tài năng nhưng vẫn thiếu một yếu tố quan trọng để cạnh tranh danh hiệu.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Dàn cựu tuyển thủ LPL chỉ ra Đường Trên xứng đáng "hay nhất lịch sử LMHT" <a href="https://cl44.cnnd.vn/dan-cuu-tuyen-thu-lpl-chi-ra-duong-tren-xung-dang-hay-nhat-lich-su-lmht-178260911041732647.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">11 Tháng 9, 2026</span>
+                                    <p>Tất nhiên nhận định của các cựu tuyển thủ LPL vẫn gặp phải sự tranh cãi của cộng đồng LMHT.</p>
+                                </article>
+                                <article class="news-item">
+                                    <h3>Khu vực LCP tiếp tục bị "báo động" <a href="https://cl44.cnnd.vn/khu-vuc-lcp-tiep-tuc-bi-bao-dong-17826091023025554.chn" target="_blank" class="source-icon" title="Đến trang nguồn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a></h3>
+                                    <span class="news-date">10 Tháng 9, 2026</span>
+                                    <p>LCP lại có thêm một năm khó khăn.</p>
+                                </article>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
+
+    <!-- CHECKOUT MODALS -->
+    <div id="modal-chatgpt" class="checkout-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content fade-in-up">
+            <button class="close-modal">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-info">
+                    <h3>Gói ChatGPT Plus - 1 Tháng</h3>
+                    <p class="modal-price">400.000đ</p>
+                    <p class="modal-savings" style="margin-top:-5px; margin-bottom:15px; font-size:0.95rem; color:var(--text-color);">Tiết kiệm <strong style="color:#e74c3c; background:rgba(231, 76, 60, 0.1); padding:3px 8px; border-radius:4px;">120.000đ</strong> so với giá gốc</p>
+                    <ul class="modal-features">
+                        <li><strong>Mô hình mạnh nhất:</strong> Truy cập không giới hạn GPT-4 và GPT-4o.</li>
+                        <li><strong>Data Analysis:</strong> Phân tích dữ liệu, đọc file Excel, CSV, PDF.</li>
+                        <li><strong>DALL-E 3:</strong> Tạo ảnh chất lượng cao theo yêu cầu.</li>
+                        <li><strong>Voice Mode:</strong> Trò chuyện bằng giọng nói thời gian thực.</li>
+                        <li><strong>Web Browsing:</strong> Tìm kiếm thông tin mới nhất trên Internet.</li>
+                    </ul>
+                </div>
+                <div class="modal-qr">
+                    <img src="./assets/zalo-qr.png" alt="Zalo QR" loading="lazy">
+                    <p>Vui lòng liên hệ Zalo để được hỗ trợ, cảm ơn bạn ^^</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-gemini" class="checkout-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content fade-in-up">
+            <button class="close-modal">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-info">
+                    <h3>Gói Gemini Pro (Google AI) - 18 Tháng</h3>
+                    <p class="modal-price">150.000đ</p>
+                    <p class="modal-savings" style="margin-top:-5px; margin-bottom:15px; font-size:0.95rem; color:var(--text-color);">Tiết kiệm <strong style="color:#e74c3c; background:rgba(231, 76, 60, 0.1); padding:3px 8px; border-radius:4px;">8.670.000đ</strong> so với giá gốc</p>
+                    <ul class="modal-features">
+                        <li><strong>Google Ecosystem:</strong> Tích hợp sâu vào hệ sinh thái Google (Docs, Gmail).</li>
+                        <li><strong>Lưu trữ khủng:</strong> Tặng kèm <span style="color:var(--accent-color); font-weight:bold;">5TB dung lượng Google Drive</span>.</li>
+                        <li><strong>Tốc độ xử lý:</strong> Phản hồi siêu nhanh, vượt trội trong việc tóm tắt tài liệu.</li>
+                        <li><strong>Xử lý Code:</strong> Viết và debug code lập trình với logic cực kỳ thông minh.</li>
+                        <li><strong>Dữ liệu thực tế:</strong> Thông tin luôn được cập nhật theo thời gian thực nhờ Google Search.</li>
+                    </ul>
+                </div>
+                <div class="modal-qr">
+                    <img src="./assets/zalo-qr.png" alt="Zalo QR" loading="lazy">
+                    <p>Vui lòng liên hệ Zalo để được hỗ trợ, cảm ơn bạn ^^</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-canva" class="checkout-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content fade-in-up">
+            <button class="close-modal">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-info">
+                    <h3>Gói Canva Pro - 1 Năm</h3>
+                    <p class="modal-price">99.000đ</p>
+                    <p class="modal-savings" style="margin-top:-5px; margin-bottom:15px; font-size:0.95rem; color:var(--text-color);">Tiết kiệm <strong style="color:#e74c3c; background:rgba(231, 76, 60, 0.1); padding:3px 8px; border-radius:4px;">1.689.000đ</strong> so với giá gốc</p>
+                    <ul class="modal-features">
+                        <li><strong>Kho tài nguyên:</strong> Hơn 100 triệu ảnh, video, audio Premium không giới hạn.</li>
+                        <li><strong>Mẫu thiết kế:</strong> 610.000+ template Pro sang trọng.</li>
+                        <li><strong>Công cụ AI:</strong> Xóa nền tự động (Magic Eraser), Magic Resize.</li>
+                        <li><strong>Lưu trữ:</strong> 1TB dung lượng đám mây an toàn.</li>
+                        <li><strong>Thương hiệu:</strong> Hỗ trợ thiết lập Brand Kit (màu sắc, font chữ riêng).</li>
+                    </ul>
+                </div>
+                <div class="modal-qr">
+                    <img src="./assets/zalo-qr.png" alt="Zalo QR" loading="lazy">
+                    <p>Vui lòng liên hệ Zalo để được hỗ trợ, cảm ơn bạn ^^</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-capcut" class="checkout-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content fade-in-up">
+            <button class="close-modal">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-info">
+                    <h3>Gói Capcut Pro - 6 Tháng</h3>
+                    <p class="modal-price">150.000đ</p>
+                    <p class="modal-savings" style="margin-top:-5px; margin-bottom:15px; font-size:0.95rem; color:var(--text-color);">Tiết kiệm <strong style="color:#e74c3c; background:rgba(231, 76, 60, 0.1); padding:3px 8px; border-radius:4px;">1.050.000đ</strong> so với giá gốc</p>
+                    <ul class="modal-features">
+                        <li><strong>Không Logo:</strong> Xóa hoàn toàn watermark, xuất video chuyên nghiệp.</li>
+                        <li><strong>Kho Hiệu ứng Pro:</strong> Truy cập toàn bộ filter, chữ, và chuyển cảnh Premium.</li>
+                        <li><strong>Công cụ AI:</strong> Tự động dịch phụ đề chuẩn xác, Auto Cutout, Tracking thông minh.</li>
+                        <li><strong>Chất lượng xuất:</strong> Hỗ trợ xuất video 4K, HDR, chống rung kỹ thuật số.</li>
+                        <li><strong>Thương mại:</strong> Cấp quyền sử dụng thương mại cho tài nguyên.</li>
+                    </ul>
+                </div>
+                <div class="modal-qr">
+                    <img src="./assets/zalo-qr.png" alt="Zalo QR" loading="lazy">
+                    <p>Vui lòng liên hệ Zalo để được hỗ trợ, cảm ơn bạn ^^</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="modal-translator" class="checkout-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content fade-in-up">
+            <button class="close-modal">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-info">
+                    <h3>Office Translator Pro</h3>
+                    <p class="modal-price">100.000đ</p>
+                    <ul class="modal-features">
+                        <li><strong>Dịch thuật siêu tốc:</strong> Hỗ trợ dịch xuất file 5 thứ tiếng nhanh chóng, tiết kiệm hàng giờ làm việc.</li>
+                        <li><strong>Chuẩn Format:</strong> Giữ nguyên hoàn toàn định dạng, bố cục, bảng biểu gốc của tài liệu.</li>
+                        <li><strong>Tương thích 100%:</strong> Hỗ trợ toàn bộ các định dạng Office 365 phổ biến (Word, Excel, PowerPoint).</li>
+                        <li><strong>Dễ sử dụng:</strong> Giao diện trực quan, chỉ cần kéo thả file là có thể dịch ngay.</li>
+                    </ul>
+                </div>
+                <div class="modal-qr">
+                    <img src="./assets/zalo-qr.png" alt="Zalo QR" loading="lazy">
+                    <p>Vui lòng liên hệ Zalo để được hỗ trợ, cảm ơn bạn ^^</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container footer-content">
             <p>&copy; 2026 Thequang.space. Chút bình yên giữa thế giới số.</p>
+            <div class="contact-info">
+                <p>Email: ntquang2211@gmail.com</p>
+                <p>Phone: +84 355 221 196</p>
+            </div>
             <div class="social-links">
-                <a href="#">Email</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
+                <a href="javascript:void(0)" id="email-link" aria-label="Copy Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+                <a href="#" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="#" target="_blank" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
             </div>
         </div>
     </footer>
 
-    <script src="./main.js"></script>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Đã sao chép Email!</div>
+
+    <script src="./main.js?v=3"></script>
 </body>
 </html>
