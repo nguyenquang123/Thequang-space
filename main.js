@@ -241,3 +241,22 @@ function updateGreeting() {
 updateGreeting();
 // Update greeting occasionally in case user leaves page open
 setInterval(updateGreeting, 60000);
+
+// 12. Free Download Modal Logic
+const freeDownloadBtns = document.querySelectorAll('.open-free-download-btn');
+const confirmDownloadBtn = document.getElementById('confirm-free-download-btn');
+if (freeDownloadBtns.length > 0 && confirmDownloadBtn) {
+    freeDownloadBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const fileUrl = btn.getAttribute('data-file');
+            confirmDownloadBtn.setAttribute('href', fileUrl);
+        });
+    });
+    
+    confirmDownloadBtn.addEventListener('click', () => {
+        const modal = confirmDownloadBtn.closest('.checkout-modal');
+        if (modal) {
+            modal.classList.remove('show');
+        }
+    });
+}
