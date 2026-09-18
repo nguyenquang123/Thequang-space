@@ -1,22 +1,25 @@
 /* =========================
    DESIGN SYSTEM & VARIABLES
    ========================= */
-   :root {
+:root {
     /* Colors - Light Pastel / Mature Theme */
-    --bg-color: #faf9f6; /* Off-white / beige */
+    --bg-color: #faf9f6;
+    /* Off-white / beige */
     --bg-secondary: #f0efeb;
     --text-primary: #2b2b2b;
     --text-secondary: #595959;
-    --accent-color: #7b8a78; /* Sage green / mature accent */
+    --accent-color: #7b8a78;
+    /* Sage green / mature accent */
     --border-color: #e5e4e2;
-    
+
     /* Typography */
     --font-main: 'Inter', sans-serif;
-    
+
     /* Spacing & Layout */
-    --container-width: 900px; /* Narrower for a more refined reading experience */
+    --container-width: 900px;
+    /* Narrower for a more refined reading experience */
     --section-spacing: 100px;
-    
+
     /* Animations */
     --transition-fast: 0.3s ease;
     --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -41,7 +44,8 @@ body {
     color: var(--text-primary);
     line-height: 1.8;
     overflow-x: hidden;
-    font-weight: 300; /* Thinner base font */
+    font-weight: 300;
+    /* Thinner base font */
 }
 
 a {
@@ -68,8 +72,11 @@ img {
 /* =========================
    TYPOGRAPHY
    ========================= */
-h1, h2, h3 {
-    font-weight: 300; /* Light, elegant weight */
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    /* Light, elegant weight */
     line-height: 1.3;
     color: #1a1a1a;
 }
@@ -192,7 +199,8 @@ p {
 /* Clock Card */
 .clock-card {
     border: 1px solid var(--border-color);
-    border-radius: 8px; /* Softer, simpler border radius */
+    border-radius: 8px;
+    /* Softer, simpler border radius */
     padding: 24px 40px;
     background-color: var(--bg-color);
     display: inline-block;
@@ -297,7 +305,8 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) contrast(1.1); /* Adds to the sketch/mature feel */
+    filter: grayscale(100%) contrast(1.1);
+    /* Adds to the sketch/mature feel */
     opacity: 0.85;
     transition: filter var(--transition-fast), opacity var(--transition-fast);
 }
@@ -339,8 +348,9 @@ p {
 .tabs-header-wrapper {
     width: 100%;
     overflow-x: auto;
-    scrollbar-width: thin; /* Firefox */
-    
+    scrollbar-width: thin;
+    /* Firefox */
+
     margin-bottom: 32px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -407,8 +417,15 @@ p {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* =========================
@@ -450,9 +467,17 @@ p {
     transform: translateY(0);
 }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
 
 /* =========================
    RESPONSIVE DESIGN
@@ -466,7 +491,7 @@ p {
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
     }
-    
+
     .nav-links::-webkit-scrollbar {
         display: none;
     }
@@ -474,11 +499,11 @@ p {
     .about-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .tabs-container {
         padding: 24px 16px;
     }
-    
+
     .hero-content h1 {
         font-size: 2.2rem;
     }
@@ -490,7 +515,7 @@ p {
     .projects-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .news-item h3 {
         font-size: 1rem;
         flex-direction: column;
@@ -498,6 +523,7 @@ p {
         gap: 5px;
     }
 }
+
 /* =========================
    DARK THEME OVERRIDES
    ========================= */
@@ -509,8 +535,8 @@ p {
     --border-color: #2a2e35;
 }
 
-[data-theme='dark'] h1, 
-[data-theme='dark'] h2, 
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
 [data-theme='dark'] h3 {
     color: #ffffff;
 }
@@ -566,10 +592,13 @@ p {
 
 /* Custom Cursor */
 @media (pointer: fine) {
-    body, a, button {
+
+    body,
+    a,
+    button {
         cursor: none;
     }
-    
+
     .custom-cursor {
         position: fixed;
         top: 0;
@@ -624,7 +653,7 @@ p {
     font-weight: 400;
     z-index: 99999;
     transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .toast.show {
@@ -767,7 +796,7 @@ p {
     html {
         scroll-snap-type: y mandatory;
     }
-    
+
     section {
         min-height: 100vh;
         scroll-snap-align: start;
@@ -775,15 +804,16 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 15vh !important; /* 15% from top */
+        padding-top: 15vh !important;
+        /* 15% from top */
         padding-bottom: 5vh !important;
         overflow: hidden;
     }
-    
+
     section::-webkit-scrollbar {
         display: none;
     }
-    
+
     .hero-section {
         justify-content: center;
         padding-top: 80px !important;
@@ -1015,7 +1045,8 @@ p {
 }
 
 .modal-qr {
-    background-color: #f8f9fa; /* Always light background for QR to be scanned easily */
+    background-color: #f8f9fa;
+    /* Always light background for QR to be scanned easily */
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -1033,7 +1064,7 @@ p {
     background: transparent;
     border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .modal-qr p {
@@ -1048,17 +1079,17 @@ p {
     .modal-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .modal-info {
         padding: 30px;
     }
-    
+
     .modal-qr {
         border-left: none;
         border-top: 1px solid var(--border-color);
         padding: 30px;
     }
-    
+
     .modal-content {
         max-height: 90vh;
         overflow-y: auto;
@@ -1068,13 +1099,17 @@ p {
 
 /* Fix jumping tabs */
 .tabs-content {
-    min-height: 400px; /* Prevent jumping */
-    max-height: 72vh; /* Don't exceed 60% of viewport */
-    overflow-y: auto; /* Scroll internally if content is too large */
+    min-height: 400px;
+    /* Prevent jumping */
+    max-height: 72vh;
+    /* Don't exceed 60% of viewport */
+    overflow-y: auto;
+    /* Scroll internally if content is too large */
     padding-bottom: 20px;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
 .tabs-content::-webkit-scrollbar {
     display: none;
 }
@@ -1085,28 +1120,36 @@ p {
     padding: 15px !important;
     gap: 8px !important;
 }
+
 .pricing-card h4 {
     font-size: 1rem !important;
     margin-bottom: 0;
 }
+
 .price-section .new-price {
     font-size: 1.5rem !important;
 }
+
 .price-section .old-price {
     font-size: 0.8rem !important;
 }
+
 .features-list {
     gap: 4px !important;
 }
+
 .features-list li {
     font-size: 0.8rem !important;
 }
+
 .warranty-status {
     font-size: 0.75rem !important;
     margin-top: 5px !important;
 }
+
 .buy-btn {
-    padding: 8px !important; margin-top: auto !important;
+    padding: 8px !important;
+    margin-top: auto !important;
     font-size: 0.9rem !important;
 }
 
@@ -1116,28 +1159,36 @@ p {
     padding: 15px !important;
     gap: 8px !important;
 }
+
 .pricing-card h4 {
     font-size: 1rem !important;
     margin-bottom: 0;
 }
+
 .price-section .new-price {
     font-size: 1.5rem !important;
 }
+
 .price-section .old-price {
     font-size: 0.8rem !important;
 }
+
 .features-list {
     gap: 4px !important;
 }
+
 .features-list li {
     font-size: 0.8rem !important;
 }
+
 .warranty-status {
     font-size: 0.75rem !important;
     margin-top: 5px !important;
 }
+
 .buy-btn {
-    padding: 8px !important; margin-top: auto !important;
+    padding: 8px !important;
+    margin-top: auto !important;
     font-size: 0.9rem !important;
 }
 
@@ -1150,16 +1201,19 @@ p {
     flex-direction: column;
     height: 100%;
 }
+
 #products .tabs-container {
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0;
 }
+
 #products .tabs-content {
     flex: 1;
     min-height: 0;
-    max-height: none; /* override previous max-height */
+    max-height: none;
+    /* override previous max-height */
     overflow-y: auto;
 }
 
@@ -1168,12 +1222,14 @@ p {
     flex-direction: column;
     height: 100%;
 }
+
 #news .tabs-container {
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0;
 }
+
 #news .tabs-content {
     flex: 1;
     min-height: 0;
@@ -1202,12 +1258,29 @@ p {
 
 
 /* Slide colours per tab - subtle background tint */
-#product-soft  { background: #f7f5f0; }
-#product-premium    { background: #f4f7f4; }
-#product-media { background: #f4f4f7; }
-#product-tech  { background: #f7f4f4; }
-#product-smarthome { background: #f4f7f7; }
-#product-cosmetics { background: #f7f4f7; }
+#product-soft {
+    background: #f7f5f0;
+}
+
+#product-premium {
+    background: #f4f7f4;
+}
+
+#product-media {
+    background: #f4f4f7;
+}
+
+#product-tech {
+    background: #f7f4f4;
+}
+
+#product-smarthome {
+    background: #f4f7f7;
+}
+
+#product-cosmetics {
+    background: #f7f4f7;
+}
 
 /* Section title: keep original, just add left accent bar */
 /* .products-section .section-title::before removed */
@@ -1276,6 +1349,7 @@ p {
     display: flex !important;
     flex-direction: column !important;
 }
+
 .buy-btn {
     margin-top: auto !important;
 }
@@ -1288,10 +1362,12 @@ p {
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
 }
+
 .products-section .tabs-content::-webkit-scrollbar,
 .news-section .tabs-content::-webkit-scrollbar {
     width: 4px;
 }
+
 .products-section .tabs-content::-webkit-scrollbar-thumb,
 .news-section .tabs-content::-webkit-scrollbar-thumb {
     background: var(--border-color);
@@ -1305,7 +1381,11 @@ p {
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
 }
-.projects-section .projects-grid::-webkit-scrollbar { width: 4px; }
+
+.projects-section .projects-grid::-webkit-scrollbar {
+    width: 4px;
+}
+
 .projects-section .projects-grid::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 4px;
@@ -1319,12 +1399,35 @@ p {
 
 
 /* === VISUAL: Slide colours per tab pane === */
-#product-soft  { background: rgba(247,245,240, 0.8); border-radius: 8px; }
-#product-premium    { background: rgba(244,247,244, 0.8); border-radius: 8px; }
-#product-media { background: rgba(244,244,247, 0.8); border-radius: 8px; }
-#product-tech  { background: rgba(247,244,244, 0.8); border-radius: 8px; }
-#product-smarthome { background: rgba(244,247,247, 0.8); border-radius: 8px; }
-#product-cosmetics { background: rgba(247,244,247, 0.8); border-radius: 8px; }
+#product-soft {
+    background: rgba(247, 245, 240, 0.8);
+    border-radius: 8px;
+}
+
+#product-premium {
+    background: rgba(244, 247, 244, 0.8);
+    border-radius: 8px;
+}
+
+#product-media {
+    background: rgba(244, 244, 247, 0.8);
+    border-radius: 8px;
+}
+
+#product-tech {
+    background: rgba(247, 244, 244, 0.8);
+    border-radius: 8px;
+}
+
+#product-smarthome {
+    background: rgba(244, 247, 247, 0.8);
+    border-radius: 8px;
+}
+
+#product-cosmetics {
+    background: rgba(247, 244, 247, 0.8);
+    border-radius: 8px;
+}
 
 /* === DEFINITIVE Ribbon Badge Fix ===
    overflow: visible on .pricing-card lets the ribbon show fully.
@@ -1339,7 +1442,7 @@ p {
     font-weight: 700;
     padding: 5px 36px;
     transform: rotate(45deg);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     white-space: nowrap;
     z-index: 1;
     letter-spacing: 0.2px;
@@ -1352,17 +1455,33 @@ p {
    ============================================================ */
 
 /* --- Global thin scrollbar style (Chromium) --- */
-::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 ::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 99px;
 }
-::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.3); }
-::-webkit-scrollbar-corner { background: transparent; }
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
 
 /* --- Firefox --- */
-* { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.15) transparent; }
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
 
 /* --- Tabs content: vertical scroll when content too tall --- */
 .tabs-content {
@@ -1393,7 +1512,8 @@ p {
 
 /* --- Every section stays locked to full-height, no layout shift --- */
 section {
-    overflow: hidden !important; /* section itself never scrolls - internal elements do */
+    overflow: hidden !important;
+    /* section itself never scrolls - internal elements do */
 }
 
 /* Except: allow content inside section to scroll via inner containers above */
@@ -1419,7 +1539,7 @@ section {
 /* === HERO SECTION ELEGANT TINT === */
 .hero-section {
     background: linear-gradient(135deg, rgba(240, 239, 235, 0.7) 0%, rgba(250, 249, 246, 1) 100%) !important;
-    border-bottom: 1px solid rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1454,12 +1574,35 @@ section {
     background: linear-gradient(135deg, rgba(28, 28, 28, 0.8) 0%, rgba(22, 22, 22, 1) 100%) !important;
 }
 
-[data-theme="dark"] #product-soft { background: rgba(35, 33, 30, 0.6) !important; border-radius: 8px; }
-[data-theme="dark"] #product-premium { background: rgba(30, 35, 33, 0.6) !important; border-radius: 8px; }
-[data-theme="dark"] #product-media { background: rgba(32, 32, 36, 0.6) !important; border-radius: 8px; }
-[data-theme="dark"] #product-tech { background: rgba(35, 30, 30, 0.6) !important; border-radius: 8px; }
-[data-theme="dark"] #product-smarthome { background: rgba(30, 34, 35, 0.6) !important; border-radius: 8px; }
-[data-theme="dark"] #product-cosmetics { background: rgba(35, 29, 34, 0.6) !important; border-radius: 8px; }
+[data-theme="dark"] #product-soft {
+    background: rgba(35, 33, 30, 0.6) !important;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] #product-premium {
+    background: rgba(30, 35, 33, 0.6) !important;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] #product-media {
+    background: rgba(32, 32, 36, 0.6) !important;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] #product-tech {
+    background: rgba(35, 30, 30, 0.6) !important;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] #product-smarthome {
+    background: rgba(30, 34, 35, 0.6) !important;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] #product-cosmetics {
+    background: rgba(35, 29, 34, 0.6) !important;
+    border-radius: 8px;
+}
 
 [data-theme="dark"] .pricing-card {
     background: var(--bg-secondary) !important;
@@ -1475,7 +1618,8 @@ section {
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    margin-bottom: 0 !important; /* Let the grid gap handle spacing */
+    margin-bottom: 0 !important;
+    /* Let the grid gap handle spacing */
 }
 
 .product-card .status-tag {
@@ -1488,25 +1632,30 @@ section {
     overflow-x: auto !important;
     overflow-y: hidden !important;
     scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,0.15) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
     padding-bottom: 5px;
 }
+
 [data-theme="dark"] .tabs-header-wrapper {
-    scrollbar-color: rgba(255,255,255,0.15) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
+
 .tabs-header-wrapper::-webkit-scrollbar {
     height: 4px;
     display: block !important;
 }
+
 .tabs-header-wrapper::-webkit-scrollbar-track {
     background: transparent;
 }
+
 .tabs-header-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 }
+
 [data-theme="dark"] .tabs-header-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* Force 2-column layout for product grids on desktop */
@@ -1524,19 +1673,24 @@ section {
     padding-right: 15px;
     margin-right: -15px;
 }
+
 .news-container::-webkit-scrollbar {
     width: 6px;
 }
+
 .news-container::-webkit-scrollbar-track {
     background: transparent;
 }
+
 .news-container::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 10px;
 }
+
 .news-container::-webkit-scrollbar-thumb:hover {
     background: var(--text-muted);
 }
+
 .news-loading {
     text-align: center;
     padding: 2rem;
@@ -1544,220 +1698,300 @@ section {
     font-style: italic;
     animation: pulse 1.5s infinite;
 }
-@keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
 
-/* =========================================================================
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+
+    /* =========================================================================
    COMPREHENSIVE MOBILE DEEP OPTIMIZATION (IOS/ANDROID) - V2
    ========================================================================= */
-@media (max-width: 1024px) {
-    /* 1. Global Reset & Typography */
-    body {
-        font-size: 14px !important; /* Thu nhỏ chữ cơ bản */
-        line-height: 1.5 !important;
-    }
-    .section-title {
-        font-size: 1.6rem !important; /* Thu nhỏ tiêu đề */
-        margin-bottom: 25px !important;
-        line-height: 1.3 !important;
-    }
-    p, h1, h2, h3, h4, h5, h6, .features-list li, .warranty-status {
-        word-wrap: break-word !important;
-        white-space: normal !important;
-    }
+    @media (max-width: 1024px) {
 
-    /* 2. Header & Navigation (Từng level chức năng) */
-    .navbar {
-        background-color: rgba(250, 249, 246, 0.98) !important; /* Nền luôn đặc trên mobile để chống đè chữ */
-        padding: 15px 0 10px 0 !important;
-        border-bottom: 1px solid var(--border-color) !important;
-    }
-    [data-theme='dark'] .navbar {
-        background-color: rgba(15, 17, 21, 0.98) !important;
-    }
-    .nav-content {
-        display: flex !important;
-        flex-direction: column !important; /* Ép xuống dòng */
-        align-items: center !important;
-        gap: 15px !important; /* Khoảng cách giữa logo và menu */
-        position: relative !important;
-    }
-    .nav-content .logo {
-        font-size: 1.4rem !important; /* Thu nhỏ logo */
-        margin: 0 !important;
-    }
-    .theme-toggle-btn {
-        position: absolute !important; /* Đặt nút mặt trăng góc phải trên cùng */
-        top: 0 !important;
-        right: 0 !important;
-        margin: 0 !important;
-    }
-    .nav-links {
-        display: flex !important;
-        width: 100% !important;
-        justify-content: flex-start !important;
-        gap: 20px !important;
-        overflow-x: auto !important; /* Menu vuốt ngang */
-        white-space: nowrap !important;
-        padding-bottom: 5px !important;
-        scrollbar-width: none !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-    .nav-links::-webkit-scrollbar {
-        display: none !important;
-    }
-    .nav-links a {
-        font-size: 0.9rem !important; /* Thu nhỏ chữ menu */
-    }
+        /* 1. Global Reset & Typography */
+        body {
+            font-size: 14px !important;
+            /* Thu nhỏ chữ cơ bản */
+            line-height: 1.5 !important;
+        }
 
-    /* 3. Hero Section & Clock */
-    .hero-content {
-        padding-top: 150px !important; /* Đẩy nội dung xuống xa navbar */
-    }
-    .hero-content h1 {
-        font-size: 1.8rem !important; /* Thu nhỏ chữ H1 */
-        line-height: 1.3 !important;
-    }
-    .hero-content .eyebrow {
-        font-size: 0.85rem !important; /* Thu nhỏ chữ Chào mừng */
-        letter-spacing: 2px !important;
-    }
-    .hero-content .subtitle {
-        font-size: 0.95rem !important;
-    }
-    .clock-card {
-        padding: 15px !important;
-        width: 100% !important;
-        max-width: 320px !important;
-        box-sizing: border-box !important;
-        margin: 20px auto 0 auto !important;
-    }
-    .clock-time {
-        font-size: 2.2rem !important; /* Thu nhỏ đồng hồ */
-    }
+        .section-title {
+            font-size: 1.6rem !important;
+            /* Thu nhỏ tiêu đề */
+            margin-bottom: 25px !important;
+            line-height: 1.3 !important;
+        }
 
-    /* 4. Tabs Navigation (Horizontal Slide) */
-    .tabs-header-wrapper {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        padding-bottom: 5px !important;
-        border-bottom: 1px solid var(--border-color) !important;
-        background: transparent !important;
-    }
-    .tabs-header {
-        display: inline-flex !important;
-        flex-direction: row !important;
-        gap: 15px !important;
-        width: max-content !important;
-        min-width: 100% !important;
-    }
-    .tab-btn {
-        flex: 0 0 auto !important;
-        width: auto !important;
-        white-space: nowrap !important;
-        text-align: center !important;
-        padding: 10px 18px !important;
-        font-size: 0.95rem !important;
-        border: none !important;
-        border-bottom: 3px solid transparent !important;
-        border-radius: 0 !important;
-        background: transparent !important;
-    }
-    .tab-btn.active {
-        background: transparent !important;
-        color: var(--text-primary) !important;
-        border-bottom: 3px solid var(--text-primary) !important;
-    }
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .features-list li,
+        .warranty-status {
+            word-wrap: break-word !important;
+            white-space: normal !important;
+        }
 
-    /* 5. Product & Project Grids (Horizontal Swipe) */
-    .product-grid, .projects-grid, .about-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        gap: 15px !important;
-        width: 100% !important;
-        padding-bottom: 20px !important; /* Tạo khoảng trống cho thanh cuộn */
-        scroll-snap-type: x mandatory !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-    .product-grid::-webkit-scrollbar, .projects-grid::-webkit-scrollbar, .about-grid::-webkit-scrollbar {
-        height: 4px !important;
-    }
-    .product-grid::-webkit-scrollbar-thumb, .projects-grid::-webkit-scrollbar-thumb, .about-grid::-webkit-scrollbar-thumb {
-        background: rgba(100, 100, 100, 0.3) !important;
-        border-radius: 10px !important;
-    }
-    .pricing-card, .project-card, .about-card {
-        flex: 0 0 75% !important; /* Nhỏ lại để thấy rõ thẻ tiếp theo */
-        max-width: 280px !important; /* Cố định chiều rộng tối đa gọn gàng */
-        padding: 15px !important;
-        box-sizing: border-box !important;
-        margin: 0 !important;
-        scroll-snap-align: center !important;
-    }
+        /* 2. Header & Navigation (Từng level chức năng) */
+        .navbar {
+            background-color: rgba(250, 249, 246, 0.98) !important;
+            /* Nền luôn đặc trên mobile để chống đè chữ */
+            padding: 15px 0 10px 0 !important;
+            border-bottom: 1px solid var(--border-color) !important;
+        }
 
-    /* Thu nhỏ hình ảnh bị ghim cố định trong HTML */
-    .pricing-card .product-image-container, .project-image {
-        height: 150px !important; 
-        margin-bottom: 12px !important;
-    }
-    
-    /* Thu nhỏ phông chữ trong thẻ */
-    .pricing-card h3, .project-card h3, .about-card h3 {
-        font-size: 1.1rem !important;
-        margin-bottom: 8px !important;
-    }
-    .pricing-card p {
-        font-size: 0.85rem !important;
-        line-height: 1.4 !important;
-    }
-    .pricing-card .modal-price {
-        font-size: 1.3rem !important;
-        margin: 8px 0 !important;
-    }
-    .pricing-card .btn, .project-card .btn {
-        padding: 10px 15px !important;
-        font-size: 0.85rem !important;
-    }
+        [data-theme='dark'] .navbar {
+            background-color: rgba(15, 17, 21, 0.98) !important;
+        }
 
-    /* 6. Release Scrolling Constraints */
-    .tabs-content, .products-section .tabs-content, .news-section .tabs-content, .projects-section .projects-grid, .about-section .container, .news-container {
-        max-height: none !important;
-        min-height: auto !important;
-        height: auto !important;
-        overflow-y: visible !important;
-        overflow-x: hidden !important;
-    }
+        .nav-content {
+            display: flex !important;
+            flex-direction: column !important;
+            /* Ép xuống dòng */
+            align-items: center !important;
+            gap: 15px !important;
+            /* Khoảng cách giữa logo và menu */
+            position: relative !important;
+        }
 
-    /* 7. Modals */
-    .modal-content {
-        width: 92% !important;
-        max-width: none !important;
-        margin: 20px auto !important;
-        padding: 20px !important;
-        box-sizing: border-box !important;
-        border-radius: 12px !important;
+        .nav-content .logo {
+            font-size: 1.4rem !important;
+            /* Thu nhỏ logo */
+            margin: 0 !important;
+        }
+
+        .theme-toggle-btn {
+            position: absolute !important;
+            /* Đặt nút mặt trăng góc phải trên cùng */
+            top: 0 !important;
+            right: 0 !important;
+            margin: 0 !important;
+        }
+
+        .nav-links {
+            display: flex !important;
+            width: 100% !important;
+            justify-content: flex-start !important;
+            gap: 20px !important;
+            overflow-x: auto !important;
+            /* Menu vuốt ngang */
+            white-space: nowrap !important;
+            padding-bottom: 5px !important;
+            scrollbar-width: none !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem !important;
+            /* Thu nhỏ chữ menu */
+        }
+
+        /* 3. Hero Section & Clock */
+        .hero-content {
+            padding-top: 150px !important;
+            /* Đẩy nội dung xuống xa navbar */
+        }
+
+        .hero-content h1 {
+            font-size: 1.8rem !important;
+            /* Thu nhỏ chữ H1 */
+            line-height: 1.3 !important;
+        }
+
+        .hero-content .eyebrow {
+            font-size: 0.85rem !important;
+            /* Thu nhỏ chữ Chào mừng */
+            letter-spacing: 2px !important;
+        }
+
+        .hero-content .subtitle {
+            font-size: 0.95rem !important;
+        }
+
+        .clock-card {
+            padding: 15px !important;
+            width: 100% !important;
+            max-width: 320px !important;
+            box-sizing: border-box !important;
+            margin: 20px auto 0 auto !important;
+        }
+
+        .clock-time {
+            font-size: 2.2rem !important;
+            /* Thu nhỏ đồng hồ */
+        }
+
+        /* 4. Tabs Navigation (Horizontal Slide) */
+        .tabs-header-wrapper {
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            padding-bottom: 5px !important;
+            border-bottom: 1px solid var(--border-color) !important;
+            background: transparent !important;
+        }
+
+        .tabs-header {
+            display: inline-flex !important;
+            flex-direction: row !important;
+            gap: 15px !important;
+            width: max-content !important;
+            min-width: 100% !important;
+        }
+
+        .tab-btn {
+            flex: 0 0 auto !important;
+            width: auto !important;
+            white-space: nowrap !important;
+            text-align: center !important;
+            padding: 10px 18px !important;
+            font-size: 0.95rem !important;
+            border: none !important;
+            border-bottom: 3px solid transparent !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+        }
+
+        .tab-btn.active {
+            background: transparent !important;
+            color: var(--text-primary) !important;
+            border-bottom: 3px solid var(--text-primary) !important;
+        }
+
+        /* 5. Product & Project Grids (Horizontal Swipe) */
+        .product-grid,
+        .projects-grid,
+        .about-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            overflow-x: auto !important;
+            gap: 15px !important;
+            width: 100% !important;
+            padding-bottom: 20px !important;
+            /* Tạo khoảng trống cho thanh cuộn */
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        .product-grid::-webkit-scrollbar,
+        .projects-grid::-webkit-scrollbar,
+        .about-grid::-webkit-scrollbar {
+            height: 4px !important;
+        }
+
+        .product-grid::-webkit-scrollbar-thumb,
+        .projects-grid::-webkit-scrollbar-thumb,
+        .about-grid::-webkit-scrollbar-thumb {
+            background: rgba(100, 100, 100, 0.3) !important;
+            border-radius: 10px !important;
+        }
+
+        .pricing-card,
+        .project-card,
+        .about-card {
+            flex: 0 0 75% !important;
+            /* Nhỏ lại để thấy rõ thẻ tiếp theo */
+            max-width: 280px !important;
+            /* Cố định chiều rộng tối đa gọn gàng */
+            padding: 15px !important;
+            box-sizing: border-box !important;
+            margin: 0 !important;
+            scroll-snap-align: center !important;
+        }
+
+        /* Thu nhỏ hình ảnh bị ghim cố định trong HTML */
+        .pricing-card .product-image-container,
+        .project-image {
+            height: 150px !important;
+            margin-bottom: 12px !important;
+        }
+
+        /* Thu nhỏ phông chữ trong thẻ */
+        .pricing-card h3,
+        .project-card h3,
+        .about-card h3 {
+            font-size: 1.1rem !important;
+            margin-bottom: 8px !important;
+        }
+
+        .pricing-card p {
+            font-size: 0.85rem !important;
+            line-height: 1.4 !important;
+        }
+
+        .pricing-card .modal-price {
+            font-size: 1.3rem !important;
+            margin: 8px 0 !important;
+        }
+
+        .pricing-card .btn,
+        .project-card .btn {
+            padding: 10px 15px !important;
+            font-size: 0.85rem !important;
+        }
+
+        /* 6. Release Scrolling Constraints */
+        .tabs-content,
+        .products-section .tabs-content,
+        .news-section .tabs-content,
+        .projects-section .projects-grid,
+        .about-section .container,
+        .news-container {
+            max-height: none !important;
+            min-height: auto !important;
+            height: auto !important;
+            overflow-y: visible !important;
+            overflow-x: hidden !important;
+        }
+
+        /* 7. Modals */
+        .modal-content {
+            width: 92% !important;
+            max-width: none !important;
+            margin: 20px auto !important;
+            padding: 20px !important;
+            box-sizing: border-box !important;
+            border-radius: 12px !important;
+        }
+
+        .modal-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 20px !important;
+        }
+
+        .modal-info,
+        .modal-qr {
+            padding: 10px 0 !important;
+            border: none !important;
+        }
+
+        #modal-free-download div[style*="display: flex"] {
+            flex-direction: column !important;
+            gap: 12px !important;
+        }
+
+        #modal-free-download a,
+        #modal-free-download button {
+            width: 100% !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            padding: 12px !important;
+        }
     }
-    .modal-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px !important;
-    }
-    .modal-info, .modal-qr {
-        padding: 10px 0 !important;
-        border: none !important;
-    }
-    #modal-free-download div[style*="display: flex"] {
-        flex-direction: column !important;
-        gap: 12px !important;
-    }
-    #modal-free-download a, #modal-free-download button {
-        width: 100% !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
-        padding: 12px !important;
-    }
-}
