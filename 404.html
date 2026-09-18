@@ -51,23 +51,28 @@
         }
         
         .space-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            position: relative;
+            width: clamp(300px, 80vw, 450px);
+            height: clamp(300px, 80vw, 450px);
+            background-color: #faf9f6;
+            border-radius: 50%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            margin: 0 auto 40px auto;
+            overflow: hidden;
         }
 
-        /* Floating Animation for Characters */
+        /* Characters inside the single circle */
         .astronaut, .saturn {
-            width: 200px;
-            height: 200px;
+            position: absolute;
             object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            mix-blend-mode: darken; /* Ensures seamless background blending */
         }
         
         .astronaut {
+            width: 50%;
+            height: 50%;
+            left: 5%;
+            top: 25%;
             /* Human astronaut arrives first, then floats */
             opacity: 0;
             animation: 
@@ -76,10 +81,12 @@
         }
 
         .saturn {
+            width: 55%;
+            height: 55%;
+            right: 0%;
+            top: 15%;
             /* Saturn cat is already there, just floating */
             animation: floating 4s ease-in-out infinite 0.5s;
-            width: 150px;
-            height: 150px;
         }
         
         @keyframes arrive {
@@ -91,15 +98,6 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
-        }
-
-        @media (max-width: 600px) {
-            .space-container {
-                flex-direction: row; /* Keep them side by side on mobile */
-                gap: 10px;
-            }
-            .astronaut { width: 140px; height: 140px; }
-            .saturn { width: 100px; height: 100px; }
         }
     </style>
 </head>
