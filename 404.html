@@ -68,15 +68,25 @@
         }
         
         .astronaut {
-            animation: floating 3s ease-in-out infinite;
+            /* Human astronaut arrives first, then floats */
+            opacity: 0;
+            animation: 
+                arrive 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+                floating 3s ease-in-out infinite 1.5s;
         }
 
         .saturn {
-            animation: floating 4s ease-in-out infinite 1s; /* Different timing and delay */
+            /* Saturn cat is already there, just floating */
+            animation: floating 4s ease-in-out infinite 0.5s;
             width: 150px;
             height: 150px;
         }
         
+        @keyframes arrive {
+            0% { opacity: 0; transform: translate(-80px, 30px) rotate(-10deg); }
+            100% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+        }
+
         @keyframes floating {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
@@ -96,7 +106,7 @@
 <body>
     <div class="space-container">
         <img src="./assets/404-astronaut.jpg" alt="Lost Astronaut" class="astronaut">
-        <img src="./assets/404-saturn.jpg" alt="Cute Saturn" class="saturn">
+        <img src="./assets/404-saturn-cat.jpg" alt="Cute Saturn Cat" class="saturn">
     </div>
     <h1>Oops!</h1>
     <p>Trang bạn tìm kiếm không tồn tại, hoặc tính năng này đang được chúng tôi nâng cấp và bảo trì.</p>
