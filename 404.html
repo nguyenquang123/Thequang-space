@@ -49,11 +49,29 @@
             background-color: #5e6b5b; 
             transform: translateY(-2px);
         }
+        
+        /* Floating Animation for Astronaut */
+        .astronaut {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            animation: floating 3s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
 <body>
+    <img src="./assets/404-astronaut.jpg" alt="Lost Astronaut" class="astronaut">
     <h1>404</h1>
-    <p>Rất tiếc, trang bạn tìm kiếm không tồn tại hoặc đã bị di chuyển sang một địa chỉ khác.</p>
-    <a href="https://thequang.space/" class="btn">Quay về Trang chủ</a>
+    <p>Rất tiếc, trang bạn tìm kiếm không tồn tại hoặc đã bị "cuốn vào hố đen vũ trụ".</p>
+    <a href="https://thequang.space/" class="btn">Quay về Trái Đất (Trang chủ)</a>
 </body>
 </html>
