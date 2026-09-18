@@ -50,15 +50,31 @@
             transform: translateY(-2px);
         }
         
-        /* Floating Animation for Astronaut */
-        .astronaut {
-            width: 250px;
-            height: 250px;
+        .space-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Floating Animation for Characters */
+        .astronaut, .saturn {
+            width: 200px;
+            height: 200px;
             object-fit: cover;
             border-radius: 50%;
-            margin-bottom: 20px;
-            animation: floating 3s ease-in-out infinite;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .astronaut {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .saturn {
+            animation: floating 4s ease-in-out infinite 1s; /* Different timing and delay */
+            width: 150px;
+            height: 150px;
         }
         
         @keyframes floating {
@@ -66,10 +82,22 @@
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
+
+        @media (max-width: 600px) {
+            .space-container {
+                flex-direction: row; /* Keep them side by side on mobile */
+                gap: 10px;
+            }
+            .astronaut { width: 140px; height: 140px; }
+            .saturn { width: 100px; height: 100px; }
+        }
     </style>
 </head>
 <body>
-    <img src="./assets/404-astronaut.jpg" alt="Lost Astronaut" class="astronaut">
+    <div class="space-container">
+        <img src="./assets/404-astronaut.jpg" alt="Lost Astronaut" class="astronaut">
+        <img src="./assets/404-saturn.jpg" alt="Cute Saturn" class="saturn">
+    </div>
     <h1>Oops!</h1>
     <p>Trang bạn tìm kiếm không tồn tại, hoặc tính năng này đang được chúng tôi nâng cấp và bảo trì.</p>
     <a href="https://thequang.space/" class="btn">Quay về Trái Đất (Trang chủ)</a>
