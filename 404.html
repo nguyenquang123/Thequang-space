@@ -26,7 +26,7 @@
             font-size: clamp(4rem, 10vw, 8rem); 
             font-weight: 300; 
             margin-bottom: 10px; 
-            color: #1a1a1a;
+            color: #7b8a78; /* Soft pastel green matching the button */
         }
         p { 
             margin-bottom: 40px; 
@@ -52,13 +52,11 @@
         
         /* Floating Animation for Scene */
         .scene {
-            width: clamp(250px, 70vw, 350px);
-            height: clamp(250px, 70vw, 350px);
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 30px;
+            width: clamp(250px, 70vw, 400px);
+            object-fit: contain;
+            margin-bottom: 20px;
             animation: floating 4s ease-in-out infinite;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            mix-blend-mode: darken; /* Ensures any background seamlessly blends into the page */
         }
         
         @keyframes floating {
