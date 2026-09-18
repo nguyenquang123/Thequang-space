@@ -50,50 +50,17 @@
             transform: translateY(-2px);
         }
         
-        .space-container {
-            position: relative;
-            width: clamp(300px, 80vw, 450px);
-            height: clamp(300px, 80vw, 450px);
-            background-color: #faf9f6;
-            border-radius: 50%;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            margin: 0 auto 40px auto;
-            overflow: hidden;
-        }
-
-        /* Characters inside the single circle */
-        .astronaut, .saturn {
-            position: absolute;
+        /* Floating Animation for Scene */
+        .scene {
+            width: clamp(250px, 70vw, 350px);
+            height: clamp(250px, 70vw, 350px);
             object-fit: cover;
-            mix-blend-mode: darken; /* Ensures seamless background blending */
+            border-radius: 50%;
+            margin-bottom: 30px;
+            animation: floating 4s ease-in-out infinite;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
         
-        .astronaut {
-            width: 50%;
-            height: 50%;
-            left: 5%;
-            top: 25%;
-            /* Human astronaut arrives first, then floats */
-            opacity: 0;
-            animation: 
-                arrive 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
-                floating 3s ease-in-out infinite 1.5s;
-        }
-
-        .saturn {
-            width: 55%;
-            height: 55%;
-            right: 0%;
-            top: 15%;
-            /* Saturn cat is already there, just floating */
-            animation: floating 4s ease-in-out infinite 0.5s;
-        }
-        
-        @keyframes arrive {
-            0% { opacity: 0; transform: translate(-80px, 30px) rotate(-10deg); }
-            100% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
-        }
-
         @keyframes floating {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
@@ -102,10 +69,7 @@
     </style>
 </head>
 <body>
-    <div class="space-container">
-        <img src="./assets/404-astronaut.jpg" alt="Lost Astronaut" class="astronaut">
-        <img src="./assets/404-saturn-cat.jpg" alt="Cute Saturn Cat" class="saturn">
-    </div>
+    <img src="./assets/404-scene.jpg" alt="Lost in Space" class="scene">
     <h1>Oops!</h1>
     <p>Trang bạn tìm kiếm không tồn tại, hoặc tính năng này đang được chúng tôi nâng cấp và bảo trì.</p>
     <a href="https://thequang.space/" class="btn">Quay về Trái Đất (Trang chủ)</a>
