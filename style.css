@@ -1419,10 +1419,6 @@ p {
     border-radius: 8px;
 }
 
-#product-smarthome {
-    background: rgba(244, 247, 247, 0.8);
-    border-radius: 8px;
-}
 
 #product-cosmetics {
     background: rgba(247, 244, 247, 0.8);
@@ -1594,10 +1590,6 @@ section {
     border-radius: 8px;
 }
 
-[data-theme="dark"] #product-smarthome {
-    background: rgba(30, 34, 35, 0.6) !important;
-    border-radius: 8px;
-}
 
 [data-theme="dark"] #product-cosmetics {
     background: rgba(35, 29, 34, 0.6) !important;
@@ -1711,11 +1703,12 @@ section {
     100% {
         opacity: 0.5;
     }
+}
 
-    /* =========================================================================
+/* =========================================================================
    COMPREHENSIVE MOBILE DEEP OPTIMIZATION (IOS/ANDROID) - V2
    ========================================================================= */
-    @media (max-width: 1024px) {
+@media (max-width: 1024px) {
 
         /* 1. Global Reset & Typography */
         body {
