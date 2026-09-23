@@ -1,13 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 0. Reset Scroll on Reload
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
+    // 0. Reset Scroll on Reload, but preserve on Back/Forward navigation
+    const navType = performance.getEntriesByType("navigation")[0]?.type;
     
-    // Remove hash from URL if present without triggering scroll
-    if (window.location.hash) {
-        history.replaceState(null, null, ' ');
+    if (navType === 'back_forward') {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'auto';
+        }
+    } else {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+        
+        // Remove hash from URL if present without triggering scroll
+        if (window.location.hash) {
+            history.replaceState(null, null, ' ');
+        }
     }
 
     // 1. Real-time Clock

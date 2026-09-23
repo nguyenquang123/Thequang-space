@@ -1995,3 +1995,8 @@ section {
             padding: 12px !important;
         }
     }
+
+/* Fix footer scroll snap */
+.footer {
+    scroll-snap-align: end;
+}

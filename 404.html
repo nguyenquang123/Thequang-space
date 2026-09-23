@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f5eee6; /* Matches the image background exactly */
+            background-color: #f5eee6;
+            /* Matches the image background exactly */
             color: #2b2b2b;
             display: flex;
             flex-direction: column;
@@ -23,19 +25,23 @@
             text-align: center;
             font-weight: 300;
         }
-        h1 { 
-            font-size: clamp(4rem, 10vw, 8rem); 
-            font-weight: 300; 
-            margin-bottom: 10px; 
-            color: #7b8a78; /* Soft pastel green matching the button */
+
+        h1 {
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #7b8a78;
+            /* Soft pastel green matching the button */
         }
-        p { 
-            margin-bottom: 40px; 
-            color: #595959; 
+
+        p {
+            margin-bottom: 40px;
+            color: #595959;
             font-size: 1.1rem;
             max-width: 400px;
             line-height: 1.6;
         }
+
         a.btn {
             display: inline-block;
             background-color: #7b8a78;
@@ -46,11 +52,12 @@
             font-size: 1rem;
             transition: all 0.3s ease;
         }
-        a.btn:hover { 
-            background-color: #5e6b5b; 
+
+        a.btn:hover {
+            background-color: #5e6b5b;
             transform: translateY(-2px);
         }
-        
+
         /* Floating Animation for Scene */
         .scene {
             width: clamp(250px, 70vw, 400px);
@@ -58,18 +65,28 @@
             margin-bottom: 20px;
             animation: floating 4s ease-in-out infinite;
         }
-        
+
         @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
     </style>
 </head>
+
 <body>
     <img src="./assets/404-astronaut-saturn.png" alt="Lost in Space" class="scene">
     <h1>Oops!</h1>
     <p>Trang bạn tìm kiếm không tồn tại, hoặc tính năng này đang được chúng tôi nâng cấp và bảo trì.</p>
-    <a href="https://thequang.space/" class="btn">Quay về Trái Đất (Trang chủ)</a>
+    <a href="javascript:void(0);" onclick="if(document.referrer) { history.back(); } else { window.location.href='/'; }" class="btn">Quay về Trái Đất (Trang chủ)</a>
 </body>
+
 </html>
