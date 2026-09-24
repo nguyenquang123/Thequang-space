@@ -1,7 +1,7 @@
 name: Update Daily News
 on:
   schedule:
-    - cron: "0 1 * * *" # Runs at 01:00 UTC (8:00 AM VN time)
+    - cron: "0 1 * * *" # Runs at 01:00 UTC (8:00 AM Vietnam time, UTC+7)
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 jobs:
@@ -19,9 +19,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run update script
         run: python scripts/update_news.py
+        continue-on-error: true  # Don't fail if RSS feed is temporarily unavailable
       - name: Commit and Push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add index.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update daily news" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update daily news [$(date +'%Y-%m-%d')]" && git push)
+
